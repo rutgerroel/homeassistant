@@ -228,3 +228,4 @@ alarm_control_panel:
 shell_command:
   start_siren: mpg123 --loop 10 /home/homeassistant/.homeassistant/siren.mp3
   stop_siren: pkill mpg123
+  update_config: bash /home/homeassistant/.homeassistant/update_config.sh
