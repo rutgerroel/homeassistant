@@ -1,5 +1,6 @@
 # HOMEKIT #
-  - alias: 'Start HomeKit'  
+  - id: homekit
+    alias: 'Start HomeKit'  
     trigger:
       - platform: homeassistant
         event: start
@@ -8,7 +9,8 @@
       - service: homekit.start
 
 # LIGHTS #
-  - alias: 'Turn on kantoor light when there is movement'
+  - id: kantoormotion
+    alias: 'Turn on kantoor light when there is movement'
     trigger:
       - platform: state
         entity_id: binary_sensor.sensor
@@ -35,7 +37,8 @@
           entity_id: light.level
           brightness: 150
 
-  - alias: 'Turn off light after 30 minutes of no motion'
+  - id: kantoormotionoff
+    alias: 'Turn off light after 30 minutes of no motion'
     trigger:
       platform: state
       entity_id: binary_sensor.sensor
