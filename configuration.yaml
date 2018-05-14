@@ -55,7 +55,7 @@ history:
 logbook:
 
 # Enables a map showing the location of tracked devices
-#map:
+map:
 
 # Track the sun
 sun:
@@ -190,7 +190,7 @@ input_number:
     max: 255
     step: 1
 
-#switch:
+# switch:
 #  - platform: template
 #    switches:
 #      spots_beide:
