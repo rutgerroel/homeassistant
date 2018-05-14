@@ -23,7 +23,7 @@
         data_template:
           entity_id: alarm_control_panel.alarm
           code: 12
-   update_config_script:
-     alias: 'Update configuration file'
-     sequence:
+  update_config_script:
+    alias: 'Update configuration file'
+    sequence:
       - service: shell_command.update_config
