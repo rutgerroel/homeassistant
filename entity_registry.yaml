@@ -1,0 +1,212 @@
+media_player.apple_tv:
+  name:
+  platform: apple_tv
+  unique_id: 41410b3ec376c20b9fcdf2131a5611218ec1b1e275f44a786bd48dd4772ed341
+remote.apple_tv:
+  name:
+  platform: apple_tv
+  unique_id: 41410b3ec376c20b9fcdf2131a5611218ec1b1e275f44a786bd48dd4772ed341
+media_player.lotte_3:
+  name:
+  platform: cast
+  unique_id: 46a1030a-940c-0cf0-4afd-98c32d6070e2
+sensor.alarm_type:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528065
+sensor.alarm_level:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528081
+binary_sensor.sensor:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076463104
+sensor.aeotec_zw100_multisensor_6_temperature:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076479506
+sensor.aeotec_zw100_multisensor_6_luminance:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076479538
+sensor.aeotec_zw100_multisensor_6_relative_humidity:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076479570
+sensor.aeotec_zw100_multisensor_6_ultraviolet:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076479922
+sensor.aeotec_zw100_multisensor_6_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528097
+sensor.aeotec_zw100_multisensor_6_burglar:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528225
+light.deense_lamp:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:6e:62:90-0b
+light.tafellamp:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:6c:74:f1-0b
+sensor.aifoon_7_van_rutger_battery_level:
+  name:
+  platform: ios
+  unique_id: level_aifoon_7_van_rutger
+sensor.aifoon_7_van_rutger_battery_state:
+  name:
+  platform: ios
+  unique_id: state_aifoon_7_van_rutger
+sensor.ipad_van_rutger_battery_state:
+  name:
+  platform: ios
+  unique_id: state_ipad_van_rutger
+sensor.ipad_van_rutger_battery_level:
+  name:
+  platform: ios
+  unique_id: level_ipad_van_rutger
+light.level:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093076481
+light.level_2:
+  name:
+  platform: zwave
+  unique_id: 4-72057594109853697
+sensor.unknown:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093273090
+switch.switch:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093060096
+sensor.alarm_type_2:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305281
+sensor.alarm_level_2:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305297
+switch.switch_2:
+  name:
+  platform: zwave
+  unique_id: 4-72057594109837312
+sensor.unknown_2:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050306
+sensor.alarm_type_3:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082497
+sensor.alarm_level_3:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082513
+sensor.aeotec_zw111_nano_dimmer_power:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093273218
+sensor.aeotec_zw111_nano_dimmer_voltage:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093273346
+sensor.aeotec_zw111_nano_dimmer_current:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093273410
+sensor.aeotec_zw111_nano_dimmer_exporting:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093273600
+sensor.aeotec_zw111_nano_dimmer_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305313
+sensor.aeotec_zw111_nano_dimmer_heat:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305393
+sensor.aeotec_zw111_nano_dimmer_power_management:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305457
+sensor.aeotec_zw111_nano_dimmer_power_2:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050434
+sensor.aeotec_zw111_nano_dimmer_voltage_2:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050562
+sensor.aeotec_zw111_nano_dimmer_current_2:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050626
+sensor.aeotec_zw111_nano_dimmer_exporting_2:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050816
+sensor.aeotec_zw111_nano_dimmer_sourcenodeid_2:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082529
+sensor.aeotec_zw111_nano_dimmer_heat_2:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082609
+sensor.aeotec_zw111_nano_dimmer_power_management_2:
+  name:
+  platform: zwave
+  unique_id: 4-72057594111082673
+sensor.aeotec_zw111_nano_dimmer_previous_reading:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050322
+sensor.aeotec_zw111_nano_dimmer_interval:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110050339
+sensor.aeotec_zw111_nano_dimmer_previous_reading_2:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093273106
+sensor.aeotec_zw111_nano_dimmer_interval_2:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093273123
+sensor.iphone_van_liesbeth_battery_state:
+  name:
+  platform: ios
+  unique_id: state_iphone_van_liesbeth
+sensor.iphone_van_liesbeth_battery_level:
+  name:
+  platform: ios
+  unique_id: level_iphone_van_liesbeth
+sensor.iphone_van_joris_battery_level:
+  name:
+  platform: ios
+  unique_id: level_iphone_van_joris
+sensor.iphone_van_joris_battery_state:
+  name:
+  platform: ios
+  unique_id: state_iphone_van_joris
+light.hue_white_hal_beneden:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:cd:00:65-0b
+light.hue_white_bijkamer:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:c5:92:fc-0b
+light.hue_white_hal_boven:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:cd:0a:2b-0b

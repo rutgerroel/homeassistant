@@ -1,0 +1,81 @@
+# SENSORS #
+    binary_sensor.sensor:
+      friendly_name: Beweging
+      device_class: motion
+    sensor.aeotec_zw100_multisensor_6_luminance:
+      friendly_name: Luminantie
+      icon: mdi:white-balance-sunny 
+    sensor.aeotec_zw100_multisensor_6_relative_humidity:
+      friendly_name: Luchtvochtigheid
+      icon: mdi:water
+    sensor.aeotec_zw100_multisensor_6_temperature:
+      friendly_name: Temperatuur
+    sensor.aeotec_zw111_nano_dimmer_power:
+      friendly_name: Wattage
+      icon: mdi:menu-right
+    sensor.aeotec_zw111_nano_dimmer_power_2:
+      friendly_name: Wattage
+      icon: mdi:menu-right
+    sensor.hue_temperature_bijkamer:
+      friendly_name: Temperatuur
+      icon: mdi:thermometer
+    sensor.hue_lightlevel_bijkamer:
+      friendly_name: Luminantie
+      icon: mdi:white-balance-sunny 
+    binary_sensor.motion_bijkamer:
+      friendly_name: Beweging
+    sensor.hue_temperature_halboven:
+      friendly_name: Temperatuur
+      icon: mdi:thermometer
+    sensor.hue_lightlevel_halboven:
+      friendly_name: Luminantie
+      icon: mdi:white-balance-sunny 
+    binary_sensor.motion_halboven:
+      friendly_name: Beweging
+
+# LIGHTS #
+    light.level:
+      friendly_name: Spots links
+    light.level_2:
+      friendly_name: Spots rechts
+    light.hue_white_bijkamer:
+      friendly_name: Lamp
+    light.hue_white_hal_beneden:
+      friendly_name: Lamp beneden
+    light.hue_white_hal_boven:
+      friendly_name: Lamp boven
+
+# DIMMERS #
+    input_number.kantoor_left_dimmer:
+      friendly_name: Dim
+      icon: mdi:menu-right
+    input_number.kantoor_right_dimmer:
+      friendly_name: Dim
+      icon: mdi:menu-right
+    input_number.hue_white_bijkamer:
+      friendly_name: Dim
+      icon: mdi:menu-right
+    input_number.hue_white_hal_beneden:
+      friendly_name: Dim
+      icon: mdi:menu-right
+    input_number.hue_white_hal_boven:
+      friendly_name: Dim
+      icon: mdi:menu-right
+    switch.spots_beide:
+      friendly_name: Spots beiderzijds
+      icon: mdi:lightbulb
+# ALARM #
+    script.awayarm:
+      friendly_name: Inschakelen afwezig
+      icon: mdi:home-lock
+    script.homearm:
+      friendly_name: Inschakelen thuis
+      icon: mdi:home-lock
+    script.disarm:
+      friendly_name: Uitschakelen
+      icon: mdi:home-lock-open
+    alarm_control_panel.alarm:
+      friendly_name: Status
+    input_number.codepad:
+      friendly_name: Code (twee-cijferig)
+      icon: mdi:chevron-right

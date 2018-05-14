@@ -1,0 +1,25 @@
+  homearm:
+    alias: 'Arm Home Button'
+    sequence:
+      service: alarm_control_panel.alarm_arm_home
+      data:
+        entity_id: alarm_control_panel.alarm
+        code: 12
+  awayarm:
+    alias: 'Arm Away Button'
+    sequence:
+      service: alarm_control_panel.alarm_arm_away
+      data:
+        entity_id: alarm_control_panel.alarm
+        code: 12
+  disarm:
+    alias: 'Disarm Button'
+    sequence:
+      - condition: numeric_state
+        entity_id: input_number.codepad
+        above: 11
+        below: 13
+      - service: alarm_control_panel.alarm_disarm
+        data_template:
+          entity_id: alarm_control_panel.alarm
+          code: 12

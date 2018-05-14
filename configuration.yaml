@@ -1,0 +1,230 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Spoorstraat
+  # Location required to calculate the time the sun rises and sets
+  latitude: 52.107
+  longitude: 5.132
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 3
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Amsterdam
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+  themes: !include themes.yaml
+
+# Enables configuration UI
+config:
+
+# Enables iOS app
+ios:
+
+http:
+  # Secrets are defined in the file secrets.yaml
+  api_password: !secret http_password
+  ssl_certificate: /home/homeassistant/dehydrated/certs/spoorstraat.duckdns.org/fullchain.pem
+  ssl_key: /home/homeassistant/dehydrated/certs/spoorstraat.duckdns.org/privkey.pem
+  base_url: spoorstraat.duckdns.org:80  
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+#map:
+
+# Track the sun
+sun:
+
+# Text to speech
+#tts:
+#  - platform: google
+
+# Cloud
+#cloud:
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+# Arlo
+arlo:
+  username: !secret arlou
+  password: !secret arlo
+
+camera:
+  - platform: arlo
+    ffmpeg_arguments: '-pred 1 -q:v 2'
+
+ffmpeg:
+  ffmpeg_bin: /usr/bin/ffmpeg
+
+# homekit
+homekit:
+  auto_start: False
+  filter:
+    include_entities:
+      - alarm_control_panel
+      - sensor.aeotec_zw100_multisensor_6_temperature
+      - sensor.aeotec_zw100_multisensor_6_relative_humidity
+      - sensor.aeotec_zw100_multisensor_6_luminance
+      - binary_sensor.sensor
+      - light.level_2
+      - light.level
+  entity_config:
+    alarm_control_panel.alarm:
+      code: 12
+
+# SENSORS #
+sensor:
+  - platform: rest
+    resource: http://192.168.2.1/api/JYr-gZ0cPx3fjWUAR-wuSjoZtyJ6zfa6WeynZLsI/sensors/4
+    name: hue_temperature_bijkamer
+    value_template: '{{ value_json.state.temperature | float / 100 }}'
+    unit_of_measurement: °C
+  - platform: rest
+    resource: http://192.168.2.1/api/JYr-gZ0cPx3fjWUAR-wuSjoZtyJ6zfa6WeynZLsI/sensors/5
+    name: hue_presence_bijkamer
+    value_template: '{{ value_json.state.presence }}'
+    scan_interval: 1
+  - platform: rest
+    resource: http://192.168.2.1/api/JYr-gZ0cPx3fjWUAR-wuSjoZtyJ6zfa6WeynZLsI/sensors/6
+    name: hue_lightlevel_bijkamer
+    value_template: '{{ value_json.state.lightlevel | float / 100 }}'
+    unit_of_measurement: Lux
+  - platform: rest
+    resource: http://192.168.2.1/api/JYr-gZ0cPx3fjWUAR-wuSjoZtyJ6zfa6WeynZLsI/sensors/8
+    name: hue_temperature_halboven
+    value_template: '{{ value_json.state.temperature | float / 100 }}'
+    unit_of_measurement: °C
+  - platform: rest
+    resource: http://192.168.2.1/api/JYr-gZ0cPx3fjWUAR-wuSjoZtyJ6zfa6WeynZLsI/sensors/9
+    name: hue_presence_halboven
+    value_template: '{{ value_json.state.presence }}'
+    scan_interval: 1
+  - platform: rest
+    resource: http://192.168.2.1/api/JYr-gZ0cPx3fjWUAR-wuSjoZtyJ6zfa6WeynZLsI/sensors/10
+    name: hue_lightlevel_halboven
+    value_template: '{{ value_json.state.lightlevel  | float / 100 }}'
+    unit_of_measurement: Lux
+  - platform: arlo
+    monitored_conditions:
+      - captured_today
+      - last_capture
+      - total_cameras
+      - battery_level
+      - signal_strength
+
+binary_sensor:
+  - platform: template
+    sensors:
+      motion_halboven:
+        device_class: motion
+        value_template: "{{ is_state('sensor.hue_presence_halboven', 'True') }}"
+  - platform: template
+    sensors:
+      motion_bijkamer:
+        device_class: motion
+        value_template: "{{ is_state('sensor.hue_presence_bijkamer', 'True') }}"
+
+# INPUT SLIDER #
+input_number:
+  kantoor_right_dimmer:
+    name: Dimmer
+    initial: 0
+    min: 0
+    max: 255
+    step: 1
+  kantoor_left_dimmer:
+    name: Dimmer        
+    initial: 0
+    min: 0
+    max: 255
+    step: 1
+  codepad:
+    name: Code
+    initial: 0
+    min: 0
+    max: 20
+    step: 1
+  hue_white_bijkamer:
+    name: Dimmer
+    initial: 0
+    min: 0
+    max: 255
+    step: 1
+  hue_white_hal_boven:
+    name: Dimmer
+    initial: 0
+    min: 0
+    max: 255
+    step: 1
+  hue_white_hal_beneden:
+    name: Dimmer
+    initial: 0
+    min: 0
+    max: 255
+    step: 1
+
+#switch:
+#  - platform: template
+#    switches:
+#      spots_beide:
+#        value_template: "{{is_state('light.level','on') or is_state('light.level','on')}}"
+#        turn_on:
+#          service: light.turn_on
+#          data:
+#            entity_id: light.level
+#          service: light.turn_on
+#          data:  
+#            entity_id: light.level_2
+#        turn_off:
+#          service: light.turn_off
+#          data:
+#            entity_id: light.level
+#          service: light.turn_off
+#          data:
+#            entity_id: light.level_2
+
+# Z-WAVE #
+zwave: 
+  usb_path: /dev/ttyACM0
+
+# ALARM #
+alarm_control_panel:
+  - platform: manual
+    name: Alarm
+    code: 12
+    pending_time: 20
+    delay_time: 0
+    trigger_time: 300
+    disarm_after_trigger: false
+
+# COMMAND LINE #
+shell_command:
+  start_siren: mpg123 --loop 10 /home/homeassistant/.homeassistant/siren.mp3
+  stop_siren: pkill mpg123
