@@ -88,7 +88,7 @@ homekit:
   auto_start: False
   filter:
     include_entities:
-      - alarm_control_panel
+      - alarm_control_panel.alarm
       - sensor.aeotec_zw100_multisensor_6_temperature
       - sensor.aeotec_zw100_multisensor_6_relative_humidity
       - sensor.aeotec_zw100_multisensor_6_luminance
@@ -138,6 +138,14 @@ sensor:
       - total_cameras
       - battery_level
       - signal_strength
+  - platform: imap_email_content
+    name: arlo_motion_email
+    server: imap.gmail.com
+    port: 993
+    username: rutgerhomeassistant@gmail.com
+    password: vUg-6gg-KQJ-rZT
+    senders:
+      - alerts@arlo.com
 
 binary_sensor:
   - platform: template
@@ -189,26 +197,6 @@ input_number:
     min: 0
     max: 255
     step: 1
-
-# switch:
-#  - platform: template
-#    switches:
-#      spots_beide:
-#        value_template: "{{is_state('light.level','on') or is_state('light.level','on')}}"
-#        turn_on:
-#          service: light.turn_on
-#          data:
-#            entity_id: light.level
-#          service: light.turn_on
-#          data:  
-#            entity_id: light.level_2
-#        turn_off:
-#          service: light.turn_off
-#          data:
-#            entity_id: light.level
-#          service: light.turn_off
-#          data:
-#            entity_id: light.level_2
 
 # Z-WAVE #
 zwave: 
