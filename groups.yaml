@@ -1,5 +1,5 @@
   default_view:
-    view: yes
+#    view: yes
     icon: mdi:home
     entities:
       - group.security
