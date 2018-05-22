@@ -11,11 +11,13 @@
     view: yes
     entities:
       - group.security
+      - camera.arlo
 
   security:
     name: Alarm
     entities:
       - alarm_control_panel.alarm
+      - alarm_control_panel.arlo
       - script.awayarm
       - script.homearm
       - input_number.codepad
