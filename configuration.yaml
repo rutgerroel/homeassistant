@@ -2,8 +2,8 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Spoorstraat
   # Location required to calculate the time the sun rises and sets
-  latitude: 52.107
-  longitude: 5.132
+  latitude: 52.0453274
+  longitude: 6.1046424
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 3
   # metric for Metric, imperial for Imperial
@@ -12,6 +12,13 @@ homeassistant:
   time_zone: Europe/Amsterdam
   # Customization file
   customize: !include customize.yaml
+
+zone:
+  - name: Home
+    latitude: 52.0453274
+    longitude: 6.1046424
+    radius: 50
+    icon: mdi:home
 
 # Show links to resources in log and frontend
 #introduction:
@@ -157,7 +164,7 @@ binary_sensor:
 
 # INPUT SLIDER #
 input_number:
-  kantoor_right_dimmer:
+  kantoor_right_dimmer_2:
     name: Dimmer
     initial: 0
     min: 0
@@ -169,19 +176,19 @@ input_number:
     min: 0
     max: 255
     step: 1
-  hue_white_bijkamer:
+  hue_white_bijkamer_dimmer:
     name: Dimmer
     initial: 0
     min: 0
     max: 255
     step: 1
-  hue_white_hal_boven:
+  hue_white_hal_boven_dimmer:
     name: Dimmer
     initial: 0
     min: 0
     max: 255
     step: 1
-  hue_white_hal_beneden:
+  hue_white_hal_beneden_dimmer:
     name: Dimmer
     initial: 0
     min: 0
