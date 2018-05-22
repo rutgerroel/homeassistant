@@ -71,7 +71,7 @@
       service: input_number.set_value
       data_template:
         entity_id: input_number.kantoor_right_dimmer
-        value: '{{states.light.level_2.attributes.brightness_pct}}'
+        value: '{{states.light.level_2.attributes.brightness}}'
 
   - alias: 'Kantoor_left dimmer'
     trigger:
