@@ -19,6 +19,13 @@
       - script.awayarm
       - script.homearm
       - script.disarm
+      
+  tracking:
+    name: Tracking
+    entities:
+      - device_tracker.aifoon_7_van_rutger
+      - device_tracker.iphone_van_joris
+      - device_tracker.iphone_van_liesbeth
 
   beneden:
     name: Begane grond
