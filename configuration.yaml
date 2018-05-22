@@ -79,16 +79,16 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 
 # Arlo
-arlo:
-  username: !secret arlou
-  password: !secret arlo
+#arlo:
+#  username: !secret arlou
+#  password: !secret arlo
 
-camera:
-  - platform: arlo
-    ffmpeg_arguments: '-pred 1 -q:v 2'
+#camera:
+#  - platform: arlo
+#    ffmpeg_arguments: '-pred 1 -q:v 2'
 
-ffmpeg:
-  ffmpeg_bin: /usr/bin/ffmpeg
+#ffmpeg:
+#  ffmpeg_bin: /usr/bin/ffmpeg
 
 # homekit
 homekit:
@@ -134,13 +134,13 @@ sensor:
     name: hue_lightlevel_halboven
     value_template: '{{ value_json.state.lightlevel  | float / 100 }}'
     unit_of_measurement: Lux
-  - platform: arlo
-    monitored_conditions:
-      - captured_today
-      - last_capture
-      - total_cameras
-      - battery_level
-      - signal_strength
+#  - platform: arlo
+#    monitored_conditions:
+#      - captured_today
+#      - last_capture
+#      - total_cameras
+#      - battery_level
+#      - signal_strength
   - platform: imap_email_content
     name: arlo_motion_email
     server: imap.gmail.com
@@ -161,6 +161,11 @@ binary_sensor:
       motion_bijkamer:
         device_class: motion
         value_template: "{{ is_state('sensor.hue_presence_bijkamer', 'True') }}"
+  - platform: template
+    sensors:
+      motion_arlo:
+        device_class: motion
+        value_template: "{{ is_state('sensor.arlo_motion_email', 'Arlo heeft zojuist beweging gedetecteerd') }}"
 
 # INPUT SLIDER #
 input_number:
