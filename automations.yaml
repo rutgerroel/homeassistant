@@ -50,38 +50,34 @@
         entity_id: light.level
 
 # DIMMERS #
-  - alias: 'Kantoor_right dimmer'
+  - alias: 'Kantoor_right_2 dimmer'
     trigger:
       platform: state
-      entity_id: input_number.kantoor_right_dimmer
+      entity_id: input_number.kantoor_right_dimmer_2
     action:
       service: light.turn_on
       data_template:
         entity_id: light.level_2
-        brightness: '{{trigger.to_state.state | int}}'
-  - alias: 'Kantoor_left dimmer reactie'
+        brightness: '{{states.input_number.kantoor_right_dimmer_2.state | int}}'
+  - alias: 'Kantoor_right_2 dimmer reactie'
     trigger:
       platform: state
-      entity_id: light.level_2
+      entity_id: light.level
       to: 'off'
     action:
       service: input_number.set_value
       data:
-        entity_id: input_number.kantoor_right_dimmer
+        entity_id: input_number.kantoor_right_dimmer_2
         value: '0'
-  - alias: 'Kantoor_right dimmer reactie aan'
+  - alias: 'Kantoor_left dimmer reactie aan'
     trigger:
       platform: state
       entity_id: light.level_2
-    condition:
-    - condition: state
-      entity_id: light.level_2
-      state: 'on'      
     action:
       service: input_number.set_value
       data_template:
-        entity_id: input_number.kantoor_right_dimmer
-        value: '{{states.light.level.attributes.brightness | int}}'
+        entity_id: input_number.kantoor_right_dimmer_2
+        value: '{{states.light.level_2.attributes.brightness}}'
 
   - alias: 'Kantoor_left dimmer'
     trigger:
@@ -115,12 +111,12 @@
   - alias: 'hue_white_hal_boven dimmer'
     trigger:
       platform: state
-      entity_id: input_number.hue_white_hal_boven
+      entity_id: input_number.hue_white_hal_boven_dimmer
     action:
       service: light.turn_on
       data_template:
         entity_id: light.hue_white_hal_boven
-        brightness: '{{states.input_number.hue_white_hal_boven.state | int}}'
+        brightness: '{{states.input_number.hue_white_hal_boven_dimmer.state | int}}'
   - alias: 'hue_white_hal_boven dimmer reactie'
     trigger:
       platform: state
@@ -129,7 +125,7 @@
     action:
       service: input_number.set_value
       data:
-        entity_id: input_number.hue_white_hal_boven
+        entity_id: input_number.hue_white_hal_boven_dimmer
         value: '0'
   - alias: 'hue_white_hal_boven dimmer reactie aan'
     trigger:
@@ -138,18 +134,18 @@
     action:
       service: input_number.set_value
       data_template:
-        entity_id: input_number.hue_white_hal_boven
+        entity_id: input_number.hue_white_hal_boven_dimmer
         value: '{{states.light.hue_white_hal_boven.attributes.brightness}}'
 
   - alias: 'hue_white_hal_beneden dimmer'
     trigger:
       platform: state
-      entity_id: input_number.hue_white_hal_beneden
+      entity_id: input_number.hue_white_hal_beneden_dimmer
     action:
       service: light.turn_on
       data_template:
         entity_id: light.hue_white_hal_beneden
-        brightness: '{{states.input_number.hue_white_hal_beneden.state | int}}'
+        brightness: '{{states.input_number.hue_white_hal_beneden_dimmer.state | int}}'
   - alias: 'hue_white_hal_beneden reactie'
     trigger:
       platform: state
@@ -158,7 +154,7 @@
     action:
       service: input_number.set_value
       data:
-        entity_id: input_number.hue_white_hal_beneden
+        entity_id: input_number.hue_white_hal_beneden_dimmer
         value: '0'
   - alias: 'hue_white_hal_beneden reactie aan'
     trigger:
@@ -167,18 +163,18 @@
     action:
       service: input_number.set_value
       data_template:
-        entity_id: input_number.hue_white_hal_beneden
+        entity_id: input_number.hue_white_hal_beneden_dimmer
         value: '{{states.light.hue_white_hal_beneden.attributes.brightness}}'
 
   - alias: 'hue_white_bijkamer dimmer'
     trigger:
       platform: state
-      entity_id: input_number.hue_white_bijkamer
+      entity_id: input_number.hue_white_bijkamer_dimmer
     action:
       service: light.turn_on
       data_template:
         entity_id: light.hue_white_bijkamer
-        brightness: '{{states.input_number.hue_white_bijkamer.state | int}}'
+        brightness: '{{states.input_number.hue_white_bijkamer_dimmer.state | int}}'
   - alias: 'hue_white_bijkamer reactie'
     trigger:
       platform: state
@@ -187,7 +183,7 @@
     action:
       service: input_number.set_value
       data:
-        entity_id: input_number.hue_white_bijkamer
+        entity_id: input_number.hue_white_bijkamer_dimmer
         value: '0'
   - alias: 'hue_white_bijkamer dimmer reactie aan'
     trigger:
@@ -196,7 +192,7 @@
     action:
       service: input_number.set_value
       data_template:
-        entity_id: input_number.hue_white_bijkamer
+        entity_id: input_number.hue_white_bijkamer_dimmer
         value: '{{states.light.hue_white_bijkamer.attributes.brightness}}'
 
 # Alarm
@@ -211,6 +207,9 @@
         to: 'on'
       - platform: state
         entity_id: binary_sensor.motion_bijkamer
+        to: 'on'
+      - platform: state
+        entity_id: binary_sensor.motion_arlo
         to: 'on'
     condition:
       - condition: state
@@ -246,18 +245,6 @@
         data:
           message: "ALARM! Beweging gedetecteerd in de Spoorstraat"
       - service: command_line.start_siren
-  - alias: 'Delete code after disarm'
-    hide_entity: True
-    trigger:
-      - platform: state
-        entity_id: alarm_control_panel.alarm
-        to: 'disarmed'
-    action:
-      - service: input_number.set_value
-        entity_id: input_number.codepad
-        data:
-          value: '0'
-      - service: shell_command.stop_siren
   - alias: 'Turn off everything when leaving'
     hide_entity: True
     trigger:
