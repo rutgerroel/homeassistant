@@ -88,15 +88,12 @@ homekit:
   auto_start: False
   filter:
     include_entities:
-      - alarm_control_panel.alarm
       - sensor.aeotec_zw100_multisensor_6_temperature
       - sensor.aeotec_zw100_multisensor_6_relative_humidity
       - sensor.aeotec_zw100_multisensor_6_luminance
       - binary_sensor.sensor
       - light.level_2
       - light.level
-  entity_config:
-    alarm_control_panel.alarm:
 
 # SENSORS #
 sensor:
