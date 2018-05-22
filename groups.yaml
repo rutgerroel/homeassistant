@@ -11,16 +11,13 @@
     view: yes
     entities:
       - group.security
-      - camera.arlo
 
   security:
     name: Alarm
     entities:
       - alarm_control_panel.alarm
-      - alarm_control_panel.arlo
       - script.awayarm
       - script.homearm
-      - input_number.codepad
       - script.disarm
 
   beneden:
@@ -32,7 +29,7 @@
       - group.hal
       - group.bijkamer
 
-  Boven:
+  boven:
     name: Eerste verdieping
     view: yes
     entities:
@@ -47,7 +44,6 @@
       - sensor.aeotec_zw100_multisensor_6_relative_humidity
       - sensor.aeotec_zw100_multisensor_6_luminance
       - binary_sensor.sensor
-#      - switch.spots_beide
       - light.level_2
       - input_number.kantoor_right_dimmer
       - sensor.aeotec_zw111_nano_dimmer_power_2
@@ -73,6 +69,7 @@
       - sensor.hue_temperature_halboven
       - sensor.hue_lightlevel_halboven
       - binary_sensor.motion_halboven
+      - binary_sensor.motion_arlo
       - light.hue_white_hal_beneden
       - input_number.hue_white_hal_beneden
       - light.hue_white_hal_boven
