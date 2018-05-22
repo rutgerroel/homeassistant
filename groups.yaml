@@ -11,6 +11,7 @@
     view: yes
     entities:
       - group.security
+      - group.tracking
 
   security:
     name: Alarm
