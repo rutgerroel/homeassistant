@@ -9,8 +9,7 @@
       - service: homekit.start
 
 # LIGHTS #
-  - id: kantoormotion
-    alias: 'Turn on kantoor light when there is movement'
+  - alias: 'Turn on kantoor light when there is movement'
     trigger:
       - platform: state
         entity_id: binary_sensor.sensor
@@ -37,8 +36,7 @@
           entity_id: light.level
           brightness: 200
 
-  - id: kantoormotionoff
-    alias: 'Turn off light after 30 minutes of no motion'
+  - alias: 'Turn off light after 30 minutes of no motion'
     trigger:
       platform: state
       entity_id: binary_sensor.sensor
@@ -52,8 +50,7 @@
         entity_id: light.level
 
 # DIMMERS #
-  - id: kantoor_right_dimmer
-    alias: 'Kantoor_right dimmer'
+  - alias: 'Kantoor_right dimmer'
     trigger:
       platform: state
       entity_id: input_number.kantoor_right_dimmer
@@ -62,8 +59,7 @@
       data_template:
         entity_id: light.level_2
         brightness: '{{trigger.to_state.state | int}}'
-  - id: kantoor_right_dimmer_off
-    alias: 'Kantoor_left dimmer reactie'
+  - alias: 'Kantoor_left dimmer reactie'
     trigger:
       platform: state
       entity_id: light.level_2
@@ -73,8 +69,7 @@
       data:
         entity_id: input_number.kantoor_right_dimmer
         value: '0'
-  - id: kantoor_right_dimmer_sync
-    alias: 'Kantoor_right dimmer reactie aan'
+  - alias: 'Kantoor_right dimmer reactie aan'
     trigger:
       platform: state
       entity_id: light.level_2
