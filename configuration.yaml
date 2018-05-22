@@ -97,7 +97,6 @@ homekit:
       - light.level
   entity_config:
     alarm_control_panel.alarm:
-      code: 12
 
 # SENSORS #
 sensor:
@@ -173,12 +172,6 @@ input_number:
     min: 0
     max: 255
     step: 1
-  codepad:
-    name: Code
-    initial: 0
-    min: 0
-    max: 20
-    step: 1
   hue_white_bijkamer:
     name: Dimmer
     initial: 0
@@ -206,7 +199,6 @@ zwave:
 alarm_control_panel:
   - platform: manual
     name: Alarm
-    code: 12
     pending_time: 20
     delay_time: 0
     trigger_time: 300
