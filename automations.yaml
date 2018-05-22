@@ -66,12 +66,16 @@
     alias: 'Kantoor_right dimmer reactie aan'
     trigger:
       platform: state
-      entity_id: light.level_2.brightness_pct
+      entity_id: light.level_2
+    condition:
+    - condition: state
+      entity_id: light.level_2
+      state: 'on'      
     action:
       service: input_number.set_value
       data_template:
         entity_id: input_number.kantoor_right_dimmer
-        value: '{{trigger.to_state.state | int}}'
+        value: '{{states.light.level.attributes.brightness_pct | int}}'
 
   - alias: 'Kantoor_left dimmer'
     trigger:
