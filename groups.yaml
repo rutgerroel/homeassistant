@@ -53,7 +53,7 @@
       - sensor.aeotec_zw100_multisensor_6_luminance
       - binary_sensor.sensor
       - light.level_2
-      - input_number.kantoor_right_dimmer
+      - input_number.kantoor_right_dimmer_2
       - sensor.aeotec_zw111_nano_dimmer_power_2
       - light.level
       - input_number.kantoor_left_dimmer
@@ -66,7 +66,7 @@
       - sensor.hue_lightlevel_bijkamer
       - binary_sensor.motion_bijkamer
       - light.hue_white_bijkamer
-      - input_number.hue_white_bijkamer
+      - input_number.hue_white_bijkamer_dimmer
 
   werkplaats:
     name: Werkplaats
@@ -79,9 +79,9 @@
       - binary_sensor.motion_halboven
       - binary_sensor.motion_arlo
       - light.hue_white_hal_beneden
-      - input_number.hue_white_hal_beneden
+      - input_number.hue_white_hal_beneden_dimmer
       - light.hue_white_hal_boven
-      - input_number.hue_white_hal_boven
+      - input_number.hue_white_hal_boven_dimmer
 
   studio:
     name: Studio
