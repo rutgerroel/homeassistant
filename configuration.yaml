@@ -165,7 +165,7 @@ binary_sensor:
     sensors:
       motion_arlo:
         device_class: motion
-        value_template: "{{ is_state('sensor.arlo_motion_email', 'Arlo heeft zojuist beweging gedetecteerd') }}"
+        value_template: "{{ is_state('switch.arlo_motion_switch', 'on') }}"
 
 # INPUT SLIDER #
 input_number:
@@ -199,6 +199,12 @@ input_number:
     min: 0
     max: 255
     step: 1
+
+switch:
+  - platform: template
+    switches:
+      arlo_motion_switch:
+        value_template: "{{ is_state('sensor.arlo_motion_email', 'Arlo heeft zojuist beweging gedetecteerd') }}"
 
 # Z-WAVE #
 zwave: 
