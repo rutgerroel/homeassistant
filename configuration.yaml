@@ -145,8 +145,8 @@ sensor:
     name: arlo_motion_email
     server: imap.gmail.com
     port: 993
-    username: !secrets arlomotion
-    password: !secrets arlomotionp
+    username: !secret arlomotion
+    password: !secret arlomotionp
     senders:
       - alerts@arlo.com
 
