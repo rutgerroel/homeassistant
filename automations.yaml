@@ -205,14 +205,14 @@
   - alias: Turn switch off after 1 hour
     trigger:
       platform: state
-      entity_id: switch.arlo_motion_switch
-      to: 'on'
+      entity_id: sensor.arlo_motion_email
+      to: 'Arlo heeft zojuist beweging gedetecteerd'
       for:
         seconds: 30
     action:
-      - service: switch.turn_off
-        entity_id: switch.arlo_motion_switch
-
+      - service: notify.arlo_gmail
+        data:
+          title: 'No motion'
 
 # ALARM #
   - alias: 'Alarm Away'
