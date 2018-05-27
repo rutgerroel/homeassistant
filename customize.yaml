@@ -31,7 +31,9 @@
       friendly_name: Luminantie
       icon: mdi:white-balance-sunny 
     binary_sensor.motion_halboven:
-      friendly_name: Beweging
+      friendly_name: Beweging boven
+    binary_sensor.motion_arlo:
+      friendly_name: Beweging beneden
 
 # LIGHTS #
     light.level:
