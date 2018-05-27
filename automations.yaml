@@ -202,16 +202,17 @@
         value: '{{states.light.hue_white_bijkamer.attributes.brightness}}'
 
 # SENSORS #
-#  - alias: 'Arlo motion sensor reset'
-#    trigger:
-#      platform: state
-#      entity_id: sensor.motion_arlo_email
-#    action:
-#      - delay: 00:01
-#      - service: state
-#        data:
-#          entity_id: sensor.motion_arlo_email
-#          value: 'no motion'
+  - alias: Turn switch off after 1 hour
+    trigger:
+      platform: state
+      entity_id: switch.arlo_motion_switch
+      to: 'on'
+      for:
+        seconds: 30
+    action:
+      - service: switch.turn_off
+        entity_id: switch.arlo_motion_switch
+
 
 # ALARM #
   - alias: 'Alarm Away'
