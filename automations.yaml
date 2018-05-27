@@ -208,12 +208,11 @@
       entity_id: sensor.arlo_motion_email
       to: 'Arlo heeft zojuist beweging gedetecteerd'
       for:
-        seconds: 30
+        seconds: 60
     action:
-      - service: notify.arlo_gmail
+      - service: input_boolean.turn_off
         data:
-          title: 'No motion'
-          message: 'Automatic motion reset'
+          entity_id: input.boolean.arlo_motion_input
 
 # ALARM #
   - alias: 'Alarm Away'
