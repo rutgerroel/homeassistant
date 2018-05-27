@@ -213,6 +213,7 @@
       - service: notify.arlo_gmail
         data:
           title: 'No motion'
+          message: 'Automatic motion reset'
 
 # ALARM #
   - alias: 'Alarm Away'
