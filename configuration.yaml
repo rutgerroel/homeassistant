@@ -19,6 +19,9 @@ zone:
     longitude: 6.1046424
     radius: 50
     icon: mdi:home
+    
+device_tracker:
+  - platform: owntracks_http
 
 # Show links to resources in log and frontend
 #introduction:
