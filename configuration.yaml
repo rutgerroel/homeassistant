@@ -148,8 +148,9 @@ sensor:
     username: !secret arlomotion
     password: !secret arlomotionp
     senders:
-#      - alerts@arlo.com
+      - alerts@arlo.com
       - rutgerhomeassistant@gmail.com
+      - mij
 
 binary_sensor:
   - platform: template
