@@ -78,6 +78,10 @@
       icon: mdi:home-lock-open
     alarm_control_panel.alarm:
       friendly_name: Status
-    input_number.codepad:
-      friendly_name: Code (twee-cijferig)
-      icon: mdi:chevron-right
+    device_tracker.aifoon_7_van_rutger
+      friendly_name: Rutger
+    device_tracker.iphone_van_joris
+      friendly_name: Joris
+    device_tracker.iphone_van_liesbeth
+      friendly_name: Liesbeth
+    
