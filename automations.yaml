@@ -205,10 +205,10 @@
   - alias: 'Send no motion email'
     trigger:
       platform: state
-      entity_id: sensor.arlo_motion_email
-      to: 'Arlo heeft zojuist beweging gedetecteerd'
+      entity_id: input_boolean.turn_off
+      to: 'on'
       for:
-        seconds: 60
+        seconds: 30
     action:
       - service: input_boolean.turn_off
         data:
