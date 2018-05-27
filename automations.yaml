@@ -40,6 +40,10 @@
     trigger:
       platform: state
       entity_id: input_number.kantoor_right_dimmer
+    condition:
+      condition: numeric_state
+      entity_id: input_number.kantoor_right_dimmer
+      above: 0
     action:
       service: light.turn_on
       data_template:
@@ -48,13 +52,13 @@
   - alias: 'Kantoor_right_2 dimmer reactie'
     trigger:
       platform: state
-      entity_id: light.level
+      entity_id: light.level_2
       to: 'off'
     action:
       service: input_number.set_value
       data:
         entity_id: input_number.kantoor_right_dimmer
-        value: '0'
+        value: 0
   - alias: 'Kantoor_left dimmer reactie aan'
     trigger:
       platform: state
@@ -69,6 +73,10 @@
     trigger:
       platform: state
       entity_id: input_number.kantoor_left_dimmer
+    condition:
+      condition: numeric_state
+      entity_id: input_number.kantoor_left_dimmer
+      above: 0
     action:
       service: light.turn_on
       data_template:
@@ -83,7 +91,7 @@
       service: input_number.set_value
       data:
         entity_id: input_number.kantoor_left_dimmer
-        value: '0'
+        value: 0
   - alias: 'Kantoor_left dimmer reactie aan'
     trigger:
       platform: state
