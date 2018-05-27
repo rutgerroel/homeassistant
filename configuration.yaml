@@ -134,21 +134,14 @@ sensor:
     name: hue_lightlevel_halboven
     value_template: '{{ value_json.state.lightlevel  | float / 100 }}'
     unit_of_measurement: Lux
-#  - platform: arlo
-#    monitored_conditions:
-#      - captured_today
-#      - last_capture
-#      - total_cameras
-#      - battery_level
-#      - signal_strength
-  - platform: imap_email_content
-    name: arlo_motion_email
-    server: imap.gmail.com
-    port: 993
-    username: !secret arlomotion
-    password: !secret arlomotionp
-    senders:
-      - alerts@arlo.com
+
+rest_command:
+  disarm_arlo:
+    url: 'https://webhooks.stringify.com/v1/events/fEKBTcS1iCb3F99yGsNpV9svvetMzGwG/1/0c84dfa96b60d8e4d419981e499a3e07/KbB9QCXt2GUNzcj2SuTI'
+    method: POST
+  arm_arlo:
+    url: 'https://webhooks.stringify.com/v1/events/fEKBTcS1iCb3F99yGsNpV9svvetMzGwG/1/0c84dfa96b60d8e4d419981e499a3e07/JYgLyEL0gGdmoY4umXx7'
+    method: POST
 
 binary_sensor:
   - platform: template
@@ -223,17 +216,3 @@ shell_command:
   start_siren: mpg123 --loop 10 /home/homeassistant/.homeassistant/siren.mp3
   stop_siren: pkill mpg123
   update_config: bash /home/homeassistant/.homeassistant/update_config.sh
-
-#notify:
-#  - name: arlo_gmail
-#    platform: smtp
-#    server: smtp.gmail.com
-#    port: 587
-#    timeout: 15
-#    sender: !secret arlomotion
-#    encryption: starttls
-#    username: !secret arlomotion
-#    password: !secret arlomotionp
-#    recipient:
-#      - !secret arlomotion
-#    sender_name: Home Assistant
