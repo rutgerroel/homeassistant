@@ -149,8 +149,6 @@ sensor:
     password: !secret arlomotionp
     senders:
       - alerts@arlo.com
-      - rutgerhomeassistant@gmail.com
-      - mij
 
 binary_sensor:
   - platform: template
@@ -167,7 +165,7 @@ binary_sensor:
     sensors:
       motion_arlo:
         device_class: motion
-        value_template: "{{ is_state('sensor.arlo_motion_email', 'Arlo heeft zojuist beweging gedetecteerd') }}"
+        value_template: "{{ is_state('input_boolean.arlo_motion_input', 'on') }}"
 
 # INPUT SLIDER #
 input_number:
@@ -202,6 +200,11 @@ input_number:
     max: 255
     step: 1
 
+input_boolean:
+  arlo_motion_input:
+    name: arlo_motion_input
+    initial: off
+
 # Z-WAVE #
 zwave: 
   usb_path: /dev/ttyACM0
@@ -221,16 +224,16 @@ shell_command:
   stop_siren: pkill mpg123
   update_config: bash /home/homeassistant/.homeassistant/update_config.sh
 
-notify:
-  - name: arlo_gmail
-    platform: smtp
-    server: smtp.gmail.com
-    port: 587
-    timeout: 15
-    sender: !secret arlomotion
-    encryption: starttls
-    username: !secret arlomotion
-    password: !secret arlomotionp
-    recipient:
-      - !secret arlomotion
-    sender_name: Home Assistant
+#notify:
+#  - name: arlo_gmail
+#    platform: smtp
+#    server: smtp.gmail.com
+#    port: 587
+#    timeout: 15
+#    sender: !secret arlomotion
+#    encryption: starttls
+#    username: !secret arlomotion
+#    password: !secret arlomotionp
+#    recipient:
+#      - !secret arlomotion
+#    sender_name: Home Assistant
