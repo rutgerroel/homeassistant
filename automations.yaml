@@ -99,9 +99,9 @@
       platform: state
       entity_id: input_number.hue_white_hal_boven_dimmer
     condition:
-      condition: state
+      condition: numeric_state
       entity_id: input_number.hue_white_hal_boven_dimmer
-      above: '0'
+      above: 0
     action:
       service: light.turn_on
       data_template:
@@ -132,9 +132,9 @@
       platform: state
       entity_id: input_number.hue_white_hal_beneden_dimmer
     condition:
-      condition: state
+      condition: numeric_state
       entity_id: input_number.hue_white_hal_beneden_dimmer
-      above: '0'
+      above: 0
     action:
       service: light.turn_on
       data_template:
@@ -165,9 +165,9 @@
       platform: state
       entity_id: input_number.hue_white_bijkamer_dimmer
     condition:
-      condition: state
+      condition: numeric_state
       entity_id: input_number.hue_white_bijkamer_dimmer
-      above: '0'
+      above: 0
     action:
       service: light.turn_on
       data_template:
