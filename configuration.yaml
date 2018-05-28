@@ -17,7 +17,7 @@ zone:
   - name: Home
     latitude: 52.0453274
     longitude: 6.1046424
-    radius: 50
+    radius: 150
     icon: mdi:home
     
 device_tracker:
