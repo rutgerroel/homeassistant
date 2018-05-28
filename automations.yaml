@@ -292,12 +292,3 @@
         data:
           message: "ALARM! Beweging gedetecteerd in de Spoorstraat"
       - service: command_line.start_siren
-  - alias: 'Turn off everything when leaving'
-    hide_entity: True
-    trigger:
-      - platform: state
-        entity_id: alarm_control_panel.alarm
-        to: 'armed_away'
-    action:
-      - service: light.turn_off
-        entity_id: group.all_lights
