@@ -220,7 +220,7 @@
   - alias: 'Arlo no motion after 30 seconds'
     trigger:
       platform: state
-      entity_id: input_boolean.turn_off
+      entity_id: input_boolean.arlo_motion_input
       to: 'on'
       for:
         seconds: 30
