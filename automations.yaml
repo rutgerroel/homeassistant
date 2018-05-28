@@ -222,10 +222,10 @@
       platform: state
       entity_id: input_boolean.arlo_motion_input
       to: 'on'
+      for: '00:00:30'
     action:
-      - delay: 00:00:30
-      - service: input_boolean.turn_off
-        entity_id: input.boolean.arlo_motion_input
+      service: input_boolean.turn_off
+      entity_id: input_boolean.arlo_motion_input
 
 # ALARM #
   - alias: 'Disarm when home'
