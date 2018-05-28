@@ -38,7 +38,7 @@
   - alias: 'Turn on hal beneden light when there is movement'
     trigger:
       - platform: state
-        entity_id: binary_sensor.arlo_motion
+        entity_id: binary_sensor.motion_arlo
         to: 'on'
     condition:
         - condition: state
@@ -222,7 +222,7 @@
       platform: state
       entity_id: input_boolean.arlo_motion_input
       to: 'on'
-      for: '00:00:30'
+      for: '00:01'
     action:
       service: input_boolean.turn_off
       entity_id: input_boolean.arlo_motion_input
