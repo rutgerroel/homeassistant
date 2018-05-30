@@ -5,6 +5,7 @@
       - service: alarm_control_panel.alarm_arm_home
         data:
           entity_id: alarm_control_panel.alarm
+      - delay: 00:05
       - service: rest_command.arm_arlo
   awayarm:
     alias: 'Arm Away Button'
@@ -12,10 +13,11 @@
       - service: alarm_control_panel.alarm_arm_away
         data:
           entity_id: alarm_control_panel.alarm
-      - service: rest_command.arm_arlo
       - service: light.turn_off
         data:
           entity_id: group.all_lights
+      - delay: 00:05
+      - service: rest_command.arm_arlo
   disarm:
     alias: 'Disarm Button'
     sequence:
