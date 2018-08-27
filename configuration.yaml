@@ -147,6 +147,8 @@ sensor:
         value_template: "{{ state_attr('sensor.serial_sensor','Door opened') }}"
       last_entry_time:
         value_template: "{{ as_timestamp(states.sensor.last_entry.last_updated) }}"
+      arm_alarm:
+        value_template: "{{ state_attr('sensor.serial_sensor','Arm alarm') }}"
 
 rest_command:
   disarm_arlo:
