@@ -323,13 +323,3 @@
       - service: notify.notify
         data:
           message: "Beweging op camera gedetecteerd in de Spoorstraat"
-   
-  - alias: 'Open door bij gastencode'
-    trigger:
-      - platform: state         
-        entity_id: sensor.doorcodeinput
-    condition:
-      condition: template
-      value_template: {{ states.sensor.doorcodeinput.state = states.input_number.guest_code.state }}
-    action:
-      - service: shell_command.open_door
