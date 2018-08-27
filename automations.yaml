@@ -246,9 +246,12 @@
 # ALARM #
   - alias: 'Disarm when home'
     trigger:
-      platform: state
-      entity_id: group.all_devices
-      to: 'home'
+      - platform: state
+        entity_id: group.all_devices
+        to: 'home'
+      - platform: state
+        entity_id: sensor.last_entry
+        to: '1'
     action:
       - service: alarm_control_panel.alarm_disarm
         entity_id: alarm_control_panel.alarm
@@ -256,9 +259,12 @@
 
   - alias: 'Arm when away'
     trigger:
-      platform: state
-      entity_id: group.all_devices
-      to: 'not_home'
+      - platform: state
+        entity_id: group.all_devices
+        to: 'not_home'
+      - platform: state
+        entity_id: sensor.arm_alarm
+        to: '0'
     action:
       - service: alarm_control_panel.alarm_arm_away
         entity_id: alarm_control_panel.alarm
@@ -274,9 +280,6 @@
         to: 'on'
       - platform: state
         entity_id: binary_sensor.motion_bijkamer
-        to: 'on'
-      - platform: state
-        entity_id: binary_sensor.motion_arlo
         to: 'on'
     condition:
       condition: and
@@ -299,22 +302,7 @@
       - service: notify.ios_iphone_van_liesbeth
         data:
           message: "request_location_update"
-      
-  - alias: 'Alarm Home'
-    trigger:
-      - platform: state
-        entity_id: binary_sensor.sensor
-        to: 'on'
-      - platform: state
-        entity_id: binary_sensor.motion_bijkamer
-        to: 'on'
-    condition:
-      - condition: state
-        entity_id: alarm_control_panel.alarm
-        state: armed_home
-    action:
-      service: alarm_control_panel.alarm_trigger
-      entity_id: alarm_control_panel.alarm
+
   - alias: 'Send notification when alarm triggered'
     trigger:
       - platform: state
@@ -324,4 +312,14 @@
       - service: notify.notify
         data:
           message: "ALARM! Beweging gedetecteerd in de Spoorstraat"
-      - service: command_line.start_siren
+      - service: script.alarm_sound
+
+  - alias: 'Camera beweging'
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.motion_arlo
+        to: 'on'
+    action:
+      - service: notify.notify
+        data:
+          message: "Beweging op camera gedetecteerd in de Spoorstraat"
