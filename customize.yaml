@@ -86,7 +86,7 @@
       friendly_name: Laatste toegang door
     sensor.last_entry_time:
       friendly_name: Laatste toegang om
-    script.open_door:
+    script.open_frontdoor:
       friendly_name: Open voordeur
     input_number.guest_code:
       friendly_name: Gastencode
