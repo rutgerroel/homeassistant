@@ -18,8 +18,10 @@
     entities:
       - alarm_control_panel.alarm
       - script.awayarm
-      - script.homearm
       - script.disarm
+      - sensor.last_entry_time
+      - sensor.last_entry_who
+      - script.open_door
       
   tracking:
     name: Tracking
