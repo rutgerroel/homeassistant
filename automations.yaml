@@ -331,3 +331,5 @@
      condition:
        condition: template
        value_template: {{ states.sensor.doorcodeinput.state = states.input_number.guest_code.state }}
+     action:
+       - service: shell_command.open_door
