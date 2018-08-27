@@ -28,7 +28,7 @@
       - device_tracker.aifoon_7_van_rutger
       - device_tracker.iphone_van_joris
       - device_tracker.iphone_van_liesbeth
-      - input_boolean.last_entry_who
+      - sensor.last_entry_who
       - sensor.last_entry_time
 
   beneden:
