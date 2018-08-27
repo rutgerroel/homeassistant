@@ -137,6 +137,12 @@ sensor:
     name: hue_lightlevel_halboven
     value_template: '{{ value_json.state.lightlevel  | float / 100 }}'
     unit_of_measurement: Lux
+  - platform: serial
+    serial_port: /dev/ttyACM1
+  - platform: template
+    sensors:
+      doorcodeinput:
+        value_template: "{{ states.sensor.serial.attributes.Wiegand }}"
 
 rest_command:
   disarm_arlo:
@@ -220,3 +226,11 @@ shell_command:
   stop_siren: pkill mpg123
   update_config: bash /home/homeassistant/.homeassistant/update_config.sh
   install_python: python3 -m pip install arlo
+
+# ENTRY SYSTEM #
+switch:
+  platform: command_line
+  switches:
+    door:
+      command_on: echo d > /dev/cu.usbmodem1441
+      command_off: echo e > /dev/cu.usbmodem1441
