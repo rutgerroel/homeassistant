@@ -84,7 +84,9 @@
       friendly_name: Liesbeth
     sensor.last_entry_who:
       friendly_name: Laatste toegang door
-    sensor.last_entry:
+    sensor.last_entry_time:
       friendly_name: Laatste toegang om
-    switch.door:
+    script.open_door:
       friendly_name: Open voordeur
+    input_number.guest_code:
+      friendly_name: Gastencode
