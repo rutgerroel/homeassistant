@@ -345,4 +345,4 @@
       service: input_number.set_value
       data_template:
         entity_id: input_number.last_entry_who_code
-        value: '{{ (state_attr('sensor.serial_sensor','Wiegand') | int}}'
+        value: '{{ (state_attr('sensor.serial_sensor','Wiegand')) | int}}'
