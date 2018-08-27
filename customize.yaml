@@ -66,12 +66,10 @@
     switch.spots_beide:
       friendly_name: Spots beiderzijds
       icon: mdi:lightbulb
+
 # ALARM #
     script.awayarm:
-      friendly_name: Inschakelen afwezig
-      icon: mdi:home-lock
-    script.homearm:
-      friendly_name: Inschakelen thuis
+      friendly_name: Inschakelen
       icon: mdi:home-lock
     script.disarm:
       friendly_name: Uitschakelen
@@ -84,4 +82,9 @@
       friendly_name: Joris
     device_tracker.iphone_van_liesbeth:
       friendly_name: Liesbeth
-    
+    sensor.last_entry_who:
+      friendly_name: Laatste toegang door
+    sensor.last_entry:
+      friendly_name: Laatste toegang om
+    switch.door:
+      friendly_name: Open voordeur
