@@ -247,9 +247,6 @@
   - alias: 'Disarm when home'
     trigger:
       - platform: state
-        entity_id: group.all_devices
-        to: 'home'
-      - platform: state
         entity_id: sensor.last_entry
         to: '1'
     action:
@@ -260,9 +257,6 @@
   - alias: 'Arm when away'
     trigger:
       - platform: state
-        entity_id: group.all_devices
-        to: 'not_home'
-      - platform: state
         entity_id: sensor.arm_alarm
         to: '0'
     action:
@@ -270,7 +264,7 @@
         entity_id: alarm_control_panel.alarm
       - service: rest_command.arm_arlo
 
-  - alias: 'Alarm Away'
+  - alias: 'Alarm Trigger'
     trigger:
       - platform: state
         entity_id: binary_sensor.sensor
@@ -281,6 +275,8 @@
       - platform: state
         entity_id: binary_sensor.motion_bijkamer
         to: 'on'
+      - platform: template
+        value_template: "{% if is_state_attr('sensor.serial_sensor', 'Tamper', '1') %}true{% endif %}"
     condition:
       condition: and
       conditions:
