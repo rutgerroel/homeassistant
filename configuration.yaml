@@ -205,6 +205,12 @@ input_number:
     min: 0
     max: 255
     step: 1
+  guest_code:
+    name: Gastencode
+    intial: 12344321
+    mode: box
+    min: 0
+    max: 99999999   
 
 input_boolean:
   arlo_motion_input:
