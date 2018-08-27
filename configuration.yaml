@@ -142,7 +142,7 @@ sensor:
   - platform: template
     sensors:
       doorcodeinput:
-        value_template: "{{ states.sensor.serial_sensor.attributes.Wiegand }}"
+        value_template: "{% if not is_state_attr('sensor.serial_sensor','Wiegand','999999') %} {{ states.sensor.serial_sensor.attributes.Wiegand }} {% endif %}"
 
 rest_command:
   disarm_arlo:
@@ -222,8 +222,6 @@ alarm_control_panel:
 
 # COMMAND LINE #
 shell_command:
-  start_siren: mpg123 --loop 10 /home/homeassistant/.homeassistant/siren.mp3
-  stop_siren: pkill mpg123
   update_config: bash /home/homeassistant/.homeassistant/update_config.sh
   install_python: python3 -m pip install arlo
 
