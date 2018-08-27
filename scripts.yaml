@@ -28,11 +28,10 @@
   alarm_sound:
     alias: 'Laat alarm afgaan'
     sequence:
-      - service: shell_command.alarm_sound
       - condition: state
         entity_id: alarm_control_panel.alarm
         state: 'triggered'
-      - condition: 
+      - service: shell_command.alarm_sound
       - service: script.turn_on
         data:
           entity_id: script.alarm_sound_loop
