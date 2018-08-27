@@ -207,17 +207,21 @@ input_number:
     step: 1
   guest_code:
     name: Gastencode
-    intial: 12344321
+    initial: 12344321
     mode: box
     min: 0
-    max: 99999999   
+    max: 99999999
+  last_entry_who_code:
+    name: Laatste toegang code
+    initial: 00000000
+    mode: box
+    min: 0
+    max: 99999999
 
 input_boolean:
   arlo_motion_input:
     name: arlo_motion_input
     initial: off
-  last_entry_who:
-    initial: 'Niemand'
 
 # Z-WAVE #
 zwave: 
