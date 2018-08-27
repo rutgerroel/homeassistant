@@ -1,12 +1,4 @@
 # ALARM #
-  homearm:
-    alias: 'Arm Home Button'
-    sequence:
-      - service: alarm_control_panel.alarm_arm_home
-        data:
-          entity_id: alarm_control_panel.alarm
-      - delay: 00:05
-      - service: rest_command.arm_arlo
   awayarm:
     alias: 'Arm Away Button'
     sequence:
@@ -29,3 +21,26 @@
     alias: 'Update configuration file'
     sequence:
       - service: shell_command.update_config
+  open_frontdoor:
+    alias: 'Open de voordeur'
+    sequence:
+      - service: shell_command.open_door
+  alarm_sound:
+    alias: 'Laat alarm afgaan'
+    sequence:
+      - service: shell_command.alarm_sound
+      - condition: state
+        entity_id: alarm_control_panel.alarm
+        state: 'triggered'
+      - condition: 
+      - service: script.turn_on
+        data:
+          entity_id: script.alarm_sound_loop
+  alarm_sound_loop:
+    alias: 'Loop alarm'
+    sequence:
+      - delay:
+          seconds: 1
+      - service: script.turn_on
+        data:
+          entity_id: script.alarm_sound
