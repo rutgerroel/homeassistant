@@ -242,5 +242,5 @@ switch:
   - platform: command_line
     switches:
       doorbell:
-        command_on: echo a> /dev/ttyACM1
+        command_on: echo a > /dev/ttyACM1
         command_off: echo e > /dev/ttyACM1
