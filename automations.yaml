@@ -252,7 +252,7 @@
     action:
       - service: alarm_control_panel.alarm_disarm
         entity_id: alarm_control_panel.alarm
-      - service: rest_command.disarm_arlo
+#      - service: rest_command.disarm_arlo
 
   - alias: 'Arm when away'
     trigger:
@@ -262,7 +262,7 @@
     action:
       - service: alarm_control_panel.alarm_arm_away
         entity_id: alarm_control_panel.alarm
-      - service: rest_command.arm_arlo
+#      - service: rest_command.arm_arlo
 
   - alias: 'Alarm Trigger'
     trigger:
@@ -315,6 +315,10 @@
       - platform: state
         entity_id: binary_sensor.motion_arlo
         to: 'on'
+    condition:
+      - condition: state
+        entity_id: alarm_control_panel.alarm
+        state: armed_away
     action:
       - service: notify.notify
         data:
