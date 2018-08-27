@@ -219,7 +219,7 @@ input_number:
     name: Gastencode
     initial: 12344321
     mode: box
-    min: 0
+    min: 1111
     max: 99999999
   last_entry_who_code:
     name: Laatste toegang code
