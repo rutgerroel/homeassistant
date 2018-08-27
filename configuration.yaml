@@ -143,6 +143,10 @@ sensor:
     sensors:
       doorcodeinput:
         value_template: "{% if state_attr('sensor.serial_sensor','Wiegand') != 99999999 %} {{ state_attr('sensor.serial_sensor','Wiegand') }} {% endif %}"
+      last_entry:
+        value_template: "{{ state_attr('sensor.serial_sensor','Door opened') }}"
+      last_entry_time:
+        value_template: "{{ as_timestamp(states.sensor.last_entry.last_updated) }}"
 
 rest_command:
   disarm_arlo:
@@ -206,6 +210,8 @@ input_boolean:
   arlo_motion_input:
     name: arlo_motion_input
     initial: off
+  last_entry_who:
+    initial: 'Niemand'
 
 # Z-WAVE #
 zwave: 
@@ -224,21 +230,5 @@ alarm_control_panel:
 shell_command:
   update_config: bash /home/homeassistant/.homeassistant/update_config.sh
   install_python: python3 -m pip install arlo
-
-# ENTRY SYSTEM #
-switch:
-  - platform: command_line
-    switches:
-      door:
-        command_on: echo d > /dev/ttyACM1
-        command_off: echo e > /dev/ttyACM1
-  - platform: command_line
-    switches:
-      alarmsound:
-        command_on: echo c > /dev/ttyACM1
-        command_off: echo e > /dev/ttyACM1
-  - platform: command_line
-    switches:
-      doorbell:
-        command_on: echo a > /dev/ttyACM1
-        command_off: echo e > /dev/ttyACM1
+  open_door: echo d > /dev/ttyACM1
+  alarm_sound: echo c > /dev/ttyACM1
