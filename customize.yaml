@@ -84,9 +84,13 @@
       friendly_name: Liesbeth
     sensor.last_entry_who:
       friendly_name: Laatste toegang door
+      icon: mdi:door
     sensor.last_entry_time:
       friendly_name: Laatste toegang om
+      icon: mdi:door
     script.open_frontdoor:
-      friendly_name: Open voordeur
+      friendly_name: Open voordeur      
+      icon: mdi:door-open
     input_number.guest_code:
       friendly_name: Gastencode
+      icon: mdi-lock-smart
