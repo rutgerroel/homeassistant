@@ -19,9 +19,8 @@
       - alarm_control_panel.alarm
       - script.awayarm
       - script.disarm
-      - sensor.last_entry_time
-      - sensor.last_entry_who
-      - script.open_door
+      - script.open_frontdoor
+      - input_number.guest_code
       
   tracking:
     name: Tracking
@@ -29,6 +28,8 @@
       - device_tracker.aifoon_7_van_rutger
       - device_tracker.iphone_van_joris
       - device_tracker.iphone_van_liesbeth
+      - input_boolean.last_entry_who
+      - sensor.last_entry_time
 
   beneden:
     name: Begane grond
