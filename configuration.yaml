@@ -142,7 +142,7 @@ sensor:
   - platform: template
     sensors:
       doorcodeinput:
-        value_template: "{{ states.sensor.serial.attributes.Wiegand }}"
+        value_template: "{{ states.sensor.serial_sensor.attributes.Wiegand }}"
 
 rest_command:
   disarm_arlo:
@@ -229,8 +229,18 @@ shell_command:
 
 # ENTRY SYSTEM #
 switch:
-  platform: command_line
-  switches:
-    door:
-      command_on: echo d > /dev/cu.usbmodem1441
-      command_off: echo e > /dev/cu.usbmodem1441
+  - platform: command_line
+    switches:
+      door:
+        command_on: echo d > /dev/ttyACM1
+        command_off: echo e > /dev/ttyACM1
+  - platform: command_line
+    switches:
+      alarmsound:
+        command_on: echo c > /dev/ttyACM1
+        command_off: echo e > /dev/ttyACM1
+  - platform: command_line
+    switches:
+      doorbell:
+        command_on: echo a> /dev/ttyACM1
+        command_off: echo e > /dev/ttyACM1
