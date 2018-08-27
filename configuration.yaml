@@ -142,7 +142,7 @@ sensor:
   - platform: template
     sensors:
       doorcodeinput:
-        value_template: "{% if not is_state_attr('sensor.serial_sensor','Wiegand','999999') %} {{ states.sensor.serial_sensor.attributes.Wiegand }} {% endif %}"
+        value_template: "{% if state_attr("sensor.serial_sensor","Wiegand") != 99999999 %} {{ state_attr("sensor.serial_sensor","Wiegand") }} {% endif %}"
 
 rest_command:
   disarm_arlo:
