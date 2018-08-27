@@ -333,3 +333,16 @@
       value_template: "{{(states.sensor.doorcodeinput.state) | int = (states.input_number.guest_code.state) | int }}"
     action:
       - service: shell_command.open_door
+
+  - alias: 'Laatste toegang weergeven'
+    trigger:
+      - platform: state
+        entity_id: sensor.doorcodeinput
+    condition:
+      condition: template
+      value_template: "{{ (state_attr('sensor.serial_sensor','Wiegand') < 99999999 }}"
+    action:
+      service: input_number.set_value
+      data_template:
+        entity_id: input_number.last_entry_who_code
+        value: '{{ (state_attr('sensor.serial_sensor','Wiegand') | int}}'
