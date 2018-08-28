@@ -141,7 +141,7 @@ sensor:
       doorcodeinput:
         value_template: "{{ state_attr('sensor.serial_sensor','Wiegand') }}"
       last_entry:
-        value_template: "{{ state_attr('sensor.serial_sensor','Door opened') }}"
+        value_template: "{{ state_attr('sensor.serial_sensor','Correct_code_entered') }}"
       last_entry_time:
         value_template: "{{ timestamp_local(as_timestamp(states.input_number.last_entry_who_code.last_changed)) }}"
       last_entry_who:
@@ -156,7 +156,9 @@ sensor:
             {{ state('input_number.last_entry_who_code') }}
           {% endif %}      
       arm_alarm:
-        value_template: "{{ state_attr('sensor.serial_sensor','Arm alarm') }}"
+        value_template: "{{ state_attr('sensor.serial_sensor','Arm_alarm') }}"
+      tamper:
+        value_template: "{{ state_attr('sensor.serial_sensor','Tamper') }}"
 
 rest_command:
   disarm_arlo:
