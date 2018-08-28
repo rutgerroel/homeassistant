@@ -331,7 +331,7 @@
         entity_id: sensor.doorcodeinput
     condition:
       condition: template
-      value_template: "{{ ((states.sensor.doorcodeinput.state | int) - (states.input_number.guest_code.state | int)) < 1 }}"
+      value_template: "{{ (states.sensor.doorcodeinput.state | int) == (states.input_number.guest_code.state | int) }}"
     action:
       - service: shell_command.open_door
       - service: alarm_control_panel.alarm_disarm
