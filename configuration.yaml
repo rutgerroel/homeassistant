@@ -156,7 +156,9 @@ sensor:
             Cecile
           {% elif (states.input_number.last_entry_who_code.state | int) == 99999998 %}
             Manueel
-          {% elif (((states.input_number.last_entry_who_code.state | int) - (states.input_number.guest_code.state | int)) < 1) %}
+          {% elif (states.input_number.last_entry_who_code.state | int) == 1111 %}
+            Alarm aan
+          {% elif ((states.input_number.last_entry_who_code.state | int) == (states.input_number.guest_code.state | int)) %}
             Gast
           {% else %}
             {{ states.input_number.last_entry_who_code.state | int }}
