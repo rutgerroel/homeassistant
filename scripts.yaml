@@ -24,7 +24,14 @@
   open_frontdoor:
     alias: 'Open de voordeur'
     sequence:
-      - service: shell_command.open_door
+      - service: shell_command.open_door      
+      - service: alarm_control_panel.disarm
+        data:
+          entity_id: alarm_control_panel.alarm
+      - service: input_number.set_value
+        data:
+          entity_id: input_number.last_entry_who_code
+          value: '99999998'
   alarm_sound:
     alias: 'Laat alarm afgaan'
     sequence:
