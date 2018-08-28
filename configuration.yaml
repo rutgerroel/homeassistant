@@ -154,6 +154,8 @@ sensor:
             Liesbeth
           {% elif (states.input_number.last_entry_who_code.state | int) == 7351862 %}
             Cecile
+          {% elif (states.input_number.last_entry_who_code.state | int) == 99999998 %}
+            Manueel
           {% elif (((states.input_number.last_entry_who_code.state | int) - (states.input_number.guest_code.state | int)) < 1) %}
             Gast
           {% else %}
