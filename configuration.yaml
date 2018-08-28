@@ -143,18 +143,22 @@ sensor:
       last_entry:
         value_template: "{{ state_attr('sensor.serial_sensor','Correct_code_entered') }}"
       last_entry_time:
-        value_template: "{{ timestamp_local(as_timestamp(states.input_number.last_entry_who_code.last_changed)) }}"
+        value_template: "{{as_timestamp(states.input_number.last_entry_who_code.last_changed) | timestamp_local}}"
       last_entry_who:
         value_template: >-
-          {% if is_state('input_number.last_entry_who_code', '7026034') %}
+          {% if ('input_number.last_entry_who_code', '7026034') %}
             Rutger
-          {% elif is_state('input_number.last_entry_who_code', '7000034') %}
-            Cecile
-          {% elif is_state('input_number.last_entry_who_code', '7023434') %}
+          {% elif ('input_number.last_entry_who_code', '6071929') %}
             Joris
+          {% elif ('input_number.last_entry_who_code', '6062879') %}
+            Liesbeth
+          {% elif ('input_number.last_entry_who_code', '7351862') %}
+            Cecile
+          {% elif (((states.input_number.last_entry_who_code.state | int) - (states.input_number.guest_code.state | int)) < 1) %}
+            Gast
           {% else %}
-            {{ state('input_number.last_entry_who_code') }}
-          {% endif %}      
+            {{ states.input_number.last_entry_who_code.state | int }}
+          {% endif %}
       arm_alarm:
         value_template: "{{ state_attr('sensor.serial_sensor','Arm_alarm') }}"
       tamper:
