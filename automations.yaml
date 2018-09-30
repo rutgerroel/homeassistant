@@ -260,8 +260,8 @@
         entity_id: sensor.arm_alarm
         to: '0'
     action:
-      - service: alarm_control_panel.alarm_arm_away
-        entity_id: alarm_control_panel.alarm
+      - service: script.awayarm
+#        entity_id: alarm_control_panel.alarm
 #      - service: rest_command.arm_arlo
 
   - alias: 'Alarm Trigger'
