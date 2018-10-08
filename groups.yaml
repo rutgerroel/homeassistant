@@ -30,6 +30,7 @@
       - device_tracker.iphone_van_liesbeth
       - sensor.last_entry_who
       - sensor.last_entry_time
+      - camera.spoorstraat
 
   beneden:
     name: Begane grond
