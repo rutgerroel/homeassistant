@@ -146,17 +146,17 @@ sensor:
         value_template: "{{as_timestamp(states.input_number.last_entry_who_code.last_changed) | timestamp_local}}"
       last_entry_who:
         value_template: >-
-          {% if (states.input_number.last_entry_who_code.state | int) == 7026034 %}
+          {% if ((states.input_number.last_entry_who_code.state | int) == 7026034) %}
             Rutger
-          {% elif (states.input_number.last_entry_who_code.state | int) == 6071929 %}
+          {% elif ((states.input_number.last_entry_who_code.state | int) == 6071929) %}
             Joris
-          {% elif (states.input_number.last_entry_who_code.state | int) == 6062879 %}
+          {% elif ((states.input_number.last_entry_who_code.state | int) == 6062879) %}
             Liesbeth
-          {% elif (states.input_number.last_entry_who_code.state | int) == 7351862 %}
+          {% elif ((states.input_number.last_entry_who_code.state | int) == 7351862) %}
             Cecile
-          {% elif (states.input_number.last_entry_who_code.state | int) == 99999998 %}
+          {% elif ((states.input_number.last_entry_who_code.state | int) == 99999998) %}
             Manueel
-          {% elif (states.input_number.last_entry_who_code.state | int) == 1111 %}
+          {% elif ((states.input_number.last_entry_who_code.state | int) == 1111) %}
             Alarm aan
           {% elif ((states.input_number.last_entry_who_code.state | int) == (states.input_number.guest_code.state | int)) %}
             Gast
