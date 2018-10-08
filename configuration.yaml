@@ -167,6 +167,13 @@ sensor:
         value_template: "{{ state_attr('sensor.serial_sensor','Arm_alarm') }}"
       tamper:
         value_template: "{{ state_attr('sensor.serial_sensor','Tamper') }}"
+  - platform: arlo
+    monitored_conditions:
+      - captured_today
+      - last_capture
+      - total_cameras
+      - battery_level
+      - signal_strength
 
 rest_command:
   disarm_arlo:
