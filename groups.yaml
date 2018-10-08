@@ -25,12 +25,12 @@
   tracking:
     name: Tracking
     entities:
+      - camera.spoorstraat
       - device_tracker.aifoon_7_van_rutger
       - device_tracker.iphone_van_joris
       - device_tracker.iphone_van_liesbeth
       - sensor.last_entry_who
       - sensor.last_entry_time
-      - camera.spoorstraat
 
   beneden:
     name: Begane grond
