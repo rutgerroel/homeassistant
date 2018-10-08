@@ -40,6 +40,9 @@
       - platform: state
         entity_id: binary_sensor.motion_arlo
         to: 'on'
+      - platform: state
+        entity_id: sensor.last_entry
+        to: '0'
     condition:
       condition: and
       conditions:
