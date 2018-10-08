@@ -79,16 +79,16 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 
 # Arlo
-#arlo:
-#  username: !secret arlou
-#  password: !secret arlo
+arlo:
+  username: !secret arlou
+  password: !secret arlo
 
-#camera:
-#  - platform: arlo
-#    ffmpeg_arguments: '-pred 1 -q:v 2'
+camera:
+  - platform: arlo
+    ffmpeg_arguments: '-pred 1 -q:v 2'
 
-#ffmpeg:
-#  ffmpeg_bin: /usr/bin/ffmpeg
+ffmpeg:
+  ffmpeg_bin: /usr/bin/ffmpeg
 
 # homekit
 homekit:
@@ -259,6 +259,6 @@ alarm_control_panel:
 # COMMAND LINE #
 shell_command:
   update_config: bash /home/homeassistant/.homeassistant/update_config.sh
-  install_python: python3 -m pip install arlo
+  update_hass: pip3 install --upgrade homeassistant
   open_door: echo d > /dev/ttyACM1
   alarm_sound: echo c > /dev/ttyACM1
