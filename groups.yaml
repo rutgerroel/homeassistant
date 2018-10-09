@@ -11,6 +11,7 @@
     view: yes
     entities:
       - group.security
+      - camera.spoorstraat
       - group.tracking
 
   security:
@@ -25,7 +26,6 @@
   tracking:
     name: Tracking
     entities:
-      - camera.spoorstraat
       - device_tracker.aifoon_7_van_rutger
       - device_tracker.iphone_van_joris
       - device_tracker.iphone_van_liesbeth
