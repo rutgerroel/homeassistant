@@ -269,3 +269,38 @@ shell_command:
   update_hass: pip3 install --upgrade homeassistant
   open_door: echo d > /dev/ttyACM1
   alarm_sound: echo c > /dev/ttyACM1
+
+device_tracker:
+  - platform: nmap_tracker
+    hosts: 192.168.1.0/24
+
+# HEAT PUMP #
+buderus:
+  host: 168.192.1.80
+  password: d419b314c75814c7b66c39fbce044c3999fd45d91e32ec71403b266647c9414c
+  name: Warmtepomp Loft
+
+sensor:
+  - platform: buderus
+    resources:
+      - outside_temperature
+      - supply_temperature
+      - return_temperature
+      - room_temperature
+      - hotwater_temperature
+      - heating_current_roomsetpoint
+      - heating_manual_roomsetpoint
+      - heating_temp_roomsetpoint
+      - hotwater_current_temperature
+      - hotwater_current_setpoint
+      - hotwater_current_workingtime
+      - hotwater_current_waterflow
+      - heatsource_modulation
+      - heating_templevel_eco
+      - heating_templevel_comfort
+      - heating_activeprogram
+      - heating_operation_mode
+      - boiler_flame
+      - boiler_starts
+      - pump_modulation
+      - system_pressure
