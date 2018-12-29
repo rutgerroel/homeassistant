@@ -298,3 +298,6 @@ buderus:
   host: 168.192.1.80
   password: d419b314c75814c7b66c39fbce044c3999fd45d91e32ec71403b266647c9414c
   name: Warmtepomp Loft
+  
+climate:
+  - platform: buderus
