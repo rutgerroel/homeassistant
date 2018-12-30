@@ -300,4 +300,4 @@ buderus:
   name: Warmtepomp Loft
 
 climate:
- - buderus
+ - platform: buderus
