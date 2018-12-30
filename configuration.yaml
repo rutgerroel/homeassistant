@@ -295,6 +295,9 @@ shell_command:
 
 # HEAT PUMP #
 buderus:
-  host: 168.192.2.29
+  host: 192.168.2.29
   password: d419b314c75814c7b66c39fbce044c3999fd45d91e32ec71403b266647c9414c
   name: Warmtepomp Loft
+
+climate:
+ - buderus
