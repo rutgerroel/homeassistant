@@ -193,10 +193,7 @@ sensor:
       - heating_templevel_comfort
       - heating_activeprogram
       - heating_operation_mode
-      - boiler_flame
-      - boiler_starts
       - pump_modulation
-      - system_pressure
 
 rest_command:
   disarm_arlo:
@@ -295,9 +292,9 @@ shell_command:
 
 # HEAT PUMP #
 buderus:
-  host: 192.168.2.29
-  password: d419b314c75814c7b66c39fbce044c3999fd45d91e32ec71403b266647c9414c
-  name: Warmtepomp Loft
+  - host: 192.168.2.29
+    password: d419b314c75814c7b66c39fbce044c3999fd45d91e32ec71403b266647c9414c
+    name: Warmtepomp Loft
 
 climate:
  - platform: buderus
