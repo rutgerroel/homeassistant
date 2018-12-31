@@ -40,14 +40,17 @@
       - group.werkplaats
       - group.hal
       - group.bijkamer
+      - group.warmtepomp_kantoor
 
   boven:
     name: Eerste verdieping
     view: yes
     entities:
-      - group.studio
+      - group.loft
+      - group.keuken
       - group.slaapkamer
       - group.hal
+      - group.warmtepomp_loft
 
   kantoor:
     name: Kantoor
@@ -82,13 +85,50 @@
       - sensor.hue_lightlevel_halboven
       - binary_sensor.motion_halboven
       - binary_sensor.motion_arlo
+      - light.hal_boven
+      - input_number.hal_boven_dimmer
       - light.hue_white_hal_beneden
       - input_number.hue_white_hal_beneden_dimmer
       - light.hue_white_hal_boven
       - input_number.hue_white_hal_boven_dimmer
 
-  studio:
-    name: Studio
-
+  loft:
+    name: Loft
+    entities:
+      - light.deense_lamp
+      - input_number.deense_lamp_dimmer
+  
+  keuken:
+    name: Keuken
+    entities:
+      - light.tafellamp
+      - input_number.tafellamp_dimmer
+      - light.hue_white_lamp_1_2
+      - input_number.hue_white_lamp_1_2_dimmer
+    
   slaapkamer:
     name: Slaapkamer
+    entities:
+      - light.hue_white_lamp_1
+      - input_number.hue_white_lamp_1
+  
+  warmtepomp_loft:
+    name: Warmtepomp loft
+    entities:
+      - climate.warmtepomp_loft_thermostat
+      - sensor.warmtepomp_loft_room_temperature
+      - sensor.warmtepomp_loft_heating_room_setpoint
+      - sensor.warmtepomp_loft_outside_temperature
+      - sensor.warmtepomp_loft_modulation
+      - sensor.warmtepomp_loft_pump_modulation
+      - sensor.warmtepomp_loft_supply_temperature
+ 
+   warmtepomp_kantoor:
+    name: Warmtepomp kantoor
+#    entities:
+#      - sensor.warmtepomp_loft_room_temperature
+#      - sensor.warmtepomp_loft_heating_room_setpoint
+#      - sensor.warmtepomp_loft_outside_temperature
+#      - sensor.warmtepomp_loft_modulation
+#      - sensor.warmtepomp_loft_pump_modulation
+#      - sensor.warmtepomp_loft_supply_temperature
