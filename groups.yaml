@@ -124,7 +124,7 @@
       - sensor.warmtepomp_loft_supply_temperature
  
    warmtepomp_kantoor:
-    name: Warmtepomp kantoor
+     name: Warmtepomp kantoor
 #    entities:
 #      - sensor.warmtepomp_loft_room_temperature
 #      - sensor.warmtepomp_loft_heating_room_setpoint
