@@ -114,6 +114,7 @@
   
   warmtepomp_loft:
     name: Warmtepomp loft
+    view: yes
     entities:
       - climate.warmtepomp_loft_thermostat
       - sensor.warmtepomp_loft_room_temperature
