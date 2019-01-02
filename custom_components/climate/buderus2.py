@@ -72,7 +72,7 @@ class Buderus2Thermostat(ClimateDevice):
         self._bridge._submit_data('/heatingCircuits/hc1/temperatureRoomSetpoint', temperature)
         self._target_temperature = temperature
         
-        mod_plain = self._bridge._get_data('heatSources/actualModulation')
+        mod_plain = self._bridge._get_data('/heatSources/actualModulation')
         mod_data = self._bridge._get_json(mod_plain)
         
         if self._bridge._get_value(mod_data) > 0:
@@ -93,7 +93,7 @@ class Buderus2Thermostat(ClimateDevice):
                 data = self._bridge._get_json(plain)
                 self._target_temperature = self._bridge._get_value(data)
         
-        mod_plain = self._bridge._get_data('heatSources/actualModulation')
+        mod_plain = self._bridge._get_data('/heatSources/actualModulation')
         mod_data = self._bridge._get_json(mod_plain)
         
         if self._bridge._get_value(mod_data) > 0:
