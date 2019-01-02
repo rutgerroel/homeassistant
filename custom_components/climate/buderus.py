@@ -75,7 +75,7 @@ class BuderusThermostat(ClimateDevice):
         mod_plain = self._bridge._get_data('heatSources/actualModulation')
         mod_data = self._bridge._get_json(mod_plain)
         
-        if self._bridge._get_value(mod_data) > 0
+        if self._bridge._get_value(mod_data) > 0:
             self._current_operation = STATE_HEAT
         else:
             self._current_operation = STATE_IDLE
@@ -96,7 +96,7 @@ class BuderusThermostat(ClimateDevice):
         mod_plain = self._bridge._get_data('heatSources/actualModulation')
         mod_data = self._bridge._get_json(mod_plain)
         
-        if self._bridge._get_value(mod_data) > 0
+        if self._bridge._get_value(mod_data) > 0:
             self._current_operation = STATE_HEAT
         else:
             self._current_operation = STATE_IDLE
