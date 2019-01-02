@@ -294,7 +294,7 @@ shell_command:
 buderus:
   host: 192.168.2.29
   password: d419b314c75814c7b66c39fbce044c3999fd45d91e32ec71403b266647c9414c
-  name: Warmtepomp Loft
+  name: Warmtepomp Boven
 #  host: 192.168.2.28
 #  password: 28241d205b9d210d26d23aaa3533c0c799fd45d91e32ec71403b266647c9414c
 #  name: Warmtepomp Beneden
