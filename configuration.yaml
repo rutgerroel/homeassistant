@@ -185,17 +185,7 @@ sensor:
       - pump_modulation
       - actual_power
       - power_consumption
-  - platform: buderus2
-    resources:
-      - outside_temperature
-      - supply_temperature
-      - return_temperature
-      - room_temperature
-      - heating_current_roomsetpoint
-      - heatsource_modulation
-      - pump_modulation
-      - actual_power
-      - power_consumption
+#  - platform: buderus2
 
 rest_command:
   disarm_arlo:
@@ -303,14 +293,14 @@ buderus:
   password: d419b314c75814c7b66c39fbce044c3999fd45d91e32ec71403b266647c9414c
   name: Warmtepomp Boven
   
-buderus2:
-  host: 192.168.2.28
-  password: 28241d205b9d210d26d23aaa3533c0c799fd45d91e32ec71403b266647c9414c
-  name: Warmtepomp Beneden
+#buderus2:
+#  host: 192.168.2.28
+#  password: 28241d205b9d210d26d23aaa3533c0c799fd45d91e32ec71403b266647c9414c
+#  name: Warmtepomp Beneden
 
 climate:
  - platform: buderus
- - platform: buderus2
+# - platform: buderus2
 
 logger:
   default: debug
