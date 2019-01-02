@@ -72,10 +72,13 @@ class BuderusThermostat(ClimateDevice):
         self._bridge._submit_data('/heatingCircuits/hc1/temperatureRoomSetpoint', temperature)
         self._target_temperature = temperature
         
-        if self._target_temperature < self._current_temperature:
-            self._current_operation = STATE_IDLE
-        else:
+        mod_plain = self._bridge._get_data('heatSources/actualModulation')
+        mod_data = self._bridge._get_json(mod_plain)
+        
+        if self._bridge._get_value(mod_data) > 0
             self._current_operation = STATE_HEAT
+        else:
+            self._current_operation = STATE_IDLE
 
     def update(self):
         """Get the latest data."""
@@ -90,7 +93,10 @@ class BuderusThermostat(ClimateDevice):
                 data = self._bridge._get_json(plain)
                 self._target_temperature = self._bridge._get_value(data)
         
-        if self._target_temperature < self._current_temperature:
-            self._current_operation = STATE_IDLE
-        else:
+        mod_plain = self._bridge._get_data('heatSources/actualModulation')
+        mod_data = self._bridge._get_json(mod_plain)
+        
+        if self._bridge._get_value(mod_data) > 0
             self._current_operation = STATE_HEAT
+        else:
+            self._current_operation = STATE_IDLE
