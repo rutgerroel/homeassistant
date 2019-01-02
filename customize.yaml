@@ -107,7 +107,7 @@
 
 # WARMTEPOMP #
     climate.warmtepomp_boven_thermostat:
-      friendly_name: Thermostaat
+      friendly_name: Thermostaat boven
     sensor.warmtepomp_boven_kamertemperatuur:
       friendly_name: Kamertemperatuur
     sensor.warmtepomp_boven_huidige_temperatuurinstelling:
@@ -127,7 +127,7 @@
       friendly_name: Stroomverbruik vandaag
       icon: mdi:flash
     climate.warmtepomp_beneden_thermostat:
-      friendly_name: Thermostaat
+      friendly_name: Thermostaat beneden
     sensor.warmtepomp_beneden_kamertemperatuur:
       friendly_name: Kamertemperatuur
     sensor.warmtepomp_beneden_huidige_temperatuurinstelling:
