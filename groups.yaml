@@ -142,19 +142,19 @@
       - sensor.warmtepomp_beneden_stroomverbruik
       - sensor.warmtepomp_beneden_totaal_stroomverbuik_vandaag
  
- thermostaat_beneden:
-   name: Thermostaat beneden
-   entities:
-     - climate.warmtepomp_beneden_thermostat
+  thermostaat_beneden:
+    name: Thermostaat beneden
+    entities:
+      - climate.warmtepomp_beneden_thermostat
 
- thermostaat_boven:
-   name: Thermostaat boven
-   entities:
-     - climate.warmtepomp_boven_thermostat
+  thermostaat_boven:
+    name: Thermostaat boven
+    entities:
+      - climate.warmtepomp_boven_thermostat
  
- thermostaat:
-   name: Thermostaat
-   entities:
-     - sensor.warmtepomp_boven_buitentemperatuur
-     - climate.warmtepomp_beneden_thermostat
-     - climate.warmtepomp_boven_thermostat
+  thermostaat:
+    name: Thermostaat
+    entities:
+      - sensor.warmtepomp_boven_buitentemperatuur
+      - climate.warmtepomp_beneden_thermostat
+      - climate.warmtepomp_boven_thermostat
