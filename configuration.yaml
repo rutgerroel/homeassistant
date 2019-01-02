@@ -185,17 +185,7 @@ sensor:
       - pump_modulation
       - actual_power
       - power_consumption
-  - platform: buderus2
-    resources:
-      - outside_temperature
-      - supply_temperature
-      - return_temperature
-      - room_temperature
-      - heating_current_roomsetpoint
-      - heatsource_modulation
-      - pump_modulation
-      - actual_power
-      - power_consumption
+
 rest_command:
   disarm_arlo:
     url: 'https://webhooks.stringify.com/v1/events/fEKBTcS1iCb3F99yGsNpV9svvetMzGwG/1/0c84dfa96b60d8e4d419981e499a3e07/KbB9QCXt2GUNzcj2SuTI'
