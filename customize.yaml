@@ -94,3 +94,41 @@
     input_number.guest_code:
       friendly_name: Gastencode
       icon: mdi-lock-smart
+
+# WARMTEPOMP #
+    climate.warmtepomp_boven_thermostat:
+      friendly_name: Thermostaat
+    sensor.warmtepomp_boven_kamertemperatuur:
+      friendly_name: Kamertemperatuur
+    sensor.warmtepomp_boven_huidige_temperatuurinstelling:
+      friendly_name: Huidige temperatuurinstelling
+    sensor.warmtepomp_boven_buitentemperatuur:
+      friendly_name: Buitentemperatuur
+    sensor.warmtepomp_boven_modulatie:
+      friendly_name: Modulatie
+    sensor.warmtepomp_boven_pompmodulatie:
+      friendly_name: Pompmodulatie
+    sensor.warmtepomp_boven_aanvoertemperatuur:
+      friendly_name: Aanvoertemperatuur
+    sensor.warmtepomp_boven_stroomverbruik:
+      friendly_name: Huidig stroomverbruik
+    sensor.warmtepomp_boven_totaal_stroomverbuik_vandaag:
+      friendly_name: Stroomverbruik vandaag
+    climate.warmtepomp_beneden_thermostat:
+      friendly_name: Thermostaat
+    sensor.warmtepomp_beneden_kamertemperatuur:
+      friendly_name: Kamertemperatuur
+    sensor.warmtepomp_beneden_huidige_temperatuurinstelling:
+      friendly_name: Huidige temperatuurinstelling
+    sensor.warmtepomp_beneden_buitentemperatuur:
+      friendly_name: Buitentemperatuur
+    sensor.warmtepomp_beneden_modulatie:
+      friendly_name: Modulatie
+    sensor.warmtepomp_beneden_pompmodulatie:
+      friendly_name: Pompmodulatie
+    sensor.warmtepomp_beneden_aanvoertemperatuur:
+      friendly_name: Aanvoertemperatuur
+    sensor.warmtepomp_beneden_stroomverbruik:
+      friendly_name: Huidig stroomverbruik
+    sensor.warmtepomp_beneden_totaal_stroomverbuik_vandaag:
+      friendly_name: Stroomverbruik vandaag
