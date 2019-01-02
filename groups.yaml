@@ -3,6 +3,7 @@
     icon: mdi:home
     entities:
       - group.security
+      - group.thermostaat
       - group.kantoor
       - group.hal
 
@@ -36,6 +37,7 @@
     name: Begane grond
     view: yes
     entities:
+      - group.thermostaat_beneden
       - group.kantoor
       - group.werkplaats
       - group.hal
@@ -45,8 +47,8 @@
     name: Eerste verdieping
     view: yes
     entities:
+      - group.thermostaat_boven
       - group.loft
-      - group.keuken
       - group.slaapkamer
       - group.hal
       
@@ -100,12 +102,9 @@
   loft:
     name: Loft
     entities:
+      - sensor.warmtepomp_boven_kamertemperatuur
       - light.deense_lamp
       - input_number.deense_lamp_dimmer
-  
-  keuken:
-    name: Keuken
-    entities:
       - light.tafellamp
       - input_number.tafellamp_dimmer
       - light.hue_white_lamp_1_2
@@ -142,3 +141,20 @@
       - sensor.warmtepomp_beneden_aanvoertemperatuur
       - sensor.warmtepomp_beneden_stroomverbruik
       - sensor.warmtepomp_beneden_totaal_stroomverbuik_vandaag
+ 
+ thermostaat_beneden:
+   name: Thermostaat beneden
+   entities:
+     - climate.warmtepomp_beneden_thermostat
+
+ thermostaat_boven:
+   name: Thermostaat boven
+   entities:
+     - climate.warmtepomp_boven_thermostat
+ 
+ thermostaat:
+   name: Thermostaat
+   entities:
+     - sensor.warmtepomp_boven_buitentemperatuur
+     - climate.warmtepomp_beneden_thermostat
+     - climate.warmtepomp_boven_thermostat
