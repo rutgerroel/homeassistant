@@ -23,12 +23,6 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
             'mdi:thermometer',
             '/system/sensors/temperatures/return'
         ],
-        'heatsource_modulation': [
-            'Modulation',
-            '%',
-            'mdi:percent',
-            '/system/heatSources/hs1/actualModulation'
-        ],
         'outside_temperature': [
             'Outside Temperature',
             TEMP_CELSIUS,
@@ -40,12 +34,6 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
             TEMP_CELSIUS,
             'mdi:thermometer',
             '/system/sensors/temperatures/supply_t1'
-        ],
-        'hotwater_temperature': [
-            'Hotwater Temperature',
-            TEMP_CELSIUS,
-            'mdi:thermometer',
-            '/system/sensors/temperatures/hotWater_t2'
         ],
          'room_temperature': [
             'Room Temperature',
@@ -59,89 +47,29 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
             'mdi:thermometer',
             '/heatingCircuits/hc1/currentRoomSetpoint'
         ],
-         'heating_manual_roomsetpoint': [
-            'Heating Manual Room Setpoint',
-            TEMP_CELSIUS,
-            'mdi:thermometer',
-            '/heatingCircuits/hc1/manualRoomSetpoint'
-        ],
-         'heating_temp_roomsetpoint': [
-            'Heating Temporary Room Setpoint',
-            TEMP_CELSIUS,
-            'mdi:thermometer',
-            '/heatingCircuits/hc1/temporaryRoomSetpoint'
-        ],
-         'heating_templevel_eco': [
-            'Heating Eco Temperature',
-            TEMP_CELSIUS,
-            'mdi:thermometer',
-            '/heatingCircuits/hc1/temperatureLevels/eco'
-        ],
-         'heating_templevel_comfort': [
-            'Heating Comfort Temperature',
-            TEMP_CELSIUS,
-            'mdi:thermometer',
-            '/heatingCircuits/hc1/temperatureLevels/comfort2'
-        ],
-         'heating_activeprogram': [
-            'Heating Active Program',
-            None,
-            None,
-            '/heatingCircuits/hc1/activeSwitchProgram'
-        ],
-         'heating_operation_mode': [
-            'Heating Operation Mode',
-            None,
-            None,
-            '/heatingCircuits/hc1/operationMode'
-        ],
-        'boiler_flame': [
-            'Boiler Flame',
-            None,
-            None,
-            '/heatSources/flameStatus'
-        ],
-         'boiler_starts': [
-            'Boiler Starts',
-            None,
-            None,
-            '/heatSources/hs1/numberOfStarts'
-        ],
-         'hotwater_current_temperature': [
-            'Hotwater Temperature',
-            TEMP_CELSIUS,
-            'mdi:thermometer',
-            '/dhwCircuits/dhw1/actualTemp'
-        ],
-         'hotwater_current_setpoint': [
-            'Hotwater Setpoint',
-            TEMP_CELSIUS,
-            'mdi:thermometer',
-            '/dhwCircuits/dhw1/currentSetpoint'
-        ],
-        'hotwater_current_waterflow': [
-            'Hotwater Waterflow',
-            None,
-            None,
-            '/dhwCircuits/dhw1/waterFlow'
-        ],
-         'hotwater_current_workingtime': [
-            'Hotwater Workingtime',
-            None,
-            None,
-            '/dhwCircuits/dhw1/workingTime'
+         'heatsource_modulation': [
+            'Modulation',
+            '%',
+            'mdi:percent',
+            '/system/heatSources/hs1/actualModulation'
         ],
          'pump_modulation': [
             'Pump Modulation',
-            None,
-            None,
+            '%',
+            'mdi:percent',
             '/system/appliance/CHpumpModulation'
         ],
-         'system_pressure': [
-            'System Pressure',
-            None,
-            None,
-            '/system/appliance/systemPressure'
+         'actual_power': [
+            'Actual power',
+            'kW',
+            'mdi-flash',
+            '/heatSources/actualPower'
+        ],
+         'power_consumption': [
+            'Power consumption',
+            'kWh',
+            'mdi-flash',
+            '/heatSources/energyMonitoring/consumption'
         ],
     }
 
