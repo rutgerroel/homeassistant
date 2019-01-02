@@ -294,7 +294,7 @@ buderus:
   
 buderus2:
   host: 192.168.2.28
-  password: 28241d205b9d210d26d23aaa3533c0c799fd45d91e32ec71403b266647c9414c
+  password: 28241d205b9d210d26d23aaa3533c0c74f8d4d646dc0f09642cdfc08293848e7
   name: Warmtepomp Beneden
 
 climate:
