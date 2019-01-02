@@ -50,7 +50,7 @@
       - group.keuken
       - group.slaapkamer
       - group.hal
-      - group.warmtepomp_loft
+      - group.warmtepomp_boven
 
   kantoor:
     name: Kantoor
@@ -112,16 +112,16 @@
       - light.hue_white_lamp_1
       - input_number.hue_white_lamp_1
   
-  warmtepomp_loft:
-    name: Warmtepomp loft
+  warmtepomp_boven:
+    name: Warmtepomp boven
     entities:
-      - climate.warmtepomp_loft_thermostat
-      - sensor.warmtepomp_loft_room_temperature
-      - sensor.warmtepomp_loft_heating_room_setpoint
-      - sensor.warmtepomp_loft_outside_temperature
-      - sensor.warmtepomp_loft_modulation
-      - sensor.warmtepomp_loft_pump_modulation
-      - sensor.warmtepomp_loft_supply_temperature
+      - climate.warmtepomp_boven_thermostat
+      - sensor.warmtepomp_boven_room_temperature
+      - sensor.warmtepomp_boven_heating_room_setpoint
+      - sensor.warmtepomp_boven_outside_temperature
+      - sensor.warmtepomp_boven_modulation
+      - sensor.warmtepomp_boven_pump_modulation
+      - sensor.warmtepomp_boven_supply_temperature
  
   warmtepomp_kantoor:
     name: Warmtepomp kantoor
