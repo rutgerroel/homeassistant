@@ -62,7 +62,7 @@ history:
 logbook:
 
 # Enables a map showing the location of tracked devices
-map:
+#map:
 
 # Track the sun
 #sun:
@@ -286,9 +286,14 @@ alarm_control_panel:
 # COMMAND LINE #
 shell_command:
   update_config: bash /home/homeassistant/.homeassistant/update_config.sh
-  update_hass: pip3 install --upgrade homeassistant
   open_door: echo d > /dev/ttyACM1
   alarm_sound: echo c > /dev/ttyACM1
+  update_hass: >
+      venv/bin/python3 -m pip install --upgrade --find-links=venv/.cache
+          homeassistant uvloop appdaemon pip wheel
+  make_update_wheel: >
+      venv/bin/python3 -m pip wheel --wheel-dir=venv/.cache
+          homeassistant uvloop appdaemon pip wheel
 
 # HEAT PUMP #
 buderus:
@@ -301,3 +306,6 @@ buderus:
 
 climate:
  - platform: buderus
+
+logger:
+  default: debug
