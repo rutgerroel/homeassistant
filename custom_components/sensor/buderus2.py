@@ -87,6 +87,7 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
         sensors.append(
             Buderus2Sensor(
                 name="%s %s" % (bridge.name, SENSOR_TYPES[sensor_type][0]),
+                friendly_name="%s" % (SENSOR_TYPES[sensor_type][0]),
                 bridge=bridge,
                 sensor_type=sensor_type,
                 unit=SENSOR_TYPES[sensor_type][1],
@@ -101,9 +102,10 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
 class Buderus2Sensor(Entity):
     """Representation of a Buderus sensor."""
 
-    def __init__(self, name, bridge: Buderus2Bridge, sensor_type, unit, icon, km_id):
-        """Initialize the Buderus sensor."""
+    def __init__(self, name, friendly_name, bridge: Buderus2Bridge, sensor_type, unit, icon, km_id):
+        """Initialize the Buderus2 sensor."""
         self._name = name
+        self._friendly_name = friendly_name
         self._bridge = bridge
         self._sensor_type = sensor_type
         self._unit = unit
@@ -120,6 +122,11 @@ class Buderus2Sensor(Entity):
     def name(self):
         """Return the name of the sensor."""
         return self._name
+    
+    @property
+    def friendly_name(self):
+        """Return the name of the sensor."""
+        return self._friendly_name
 
     @property
     def icon(self):
