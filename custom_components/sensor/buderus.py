@@ -18,55 +18,55 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
     global SENSOR_TYPES
     SENSOR_TYPES = {
         'return_temperature': [
-            'Return Temperature',
+            'Retourtemperatuur',
             TEMP_CELSIUS,
             'mdi:thermometer',
             '/system/sensors/temperatures/return'
         ],
         'outside_temperature': [
-            'Outside Temperature',
+            'Buitentemperatuur',
             TEMP_CELSIUS,
             'mdi:thermometer',
             '/system/sensors/temperatures/outdoor_t1'
         ],
         'supply_temperature': [
-            'Supply Temperature',
+            'Aanvoertemperatuur',
             TEMP_CELSIUS,
             'mdi:thermometer',
             '/system/sensors/temperatures/supply_t1'
         ],
          'room_temperature': [
-            'Room Temperature',
+            'Kamertemperatuur',
             TEMP_CELSIUS,
             'mdi:thermometer',
             '/heatingCircuits/hc1/roomtemperature'
         ],
          'heating_current_roomsetpoint': [
-            'Heating Room Setpoint',
+            'Huidige temperatuurinstelling',
             TEMP_CELSIUS,
             'mdi:thermometer',
             '/heatingCircuits/hc1/currentRoomSetpoint'
         ],
          'heatsource_modulation': [
-            'Modulation',
+            'Modulatie',
             '%',
             'mdi:percent',
             '/system/heatSources/hs1/actualModulation'
         ],
          'pump_modulation': [
-            'Pump Modulation',
+            'Pompmodulatie',
             '%',
             'mdi:percent',
             '/system/appliance/CHpumpModulation'
         ],
          'actual_power': [
-            'Actual power',
+            'Stroomverbruik',
             'kW',
             'mdi-flash',
             '/heatSources/actualPower'
         ],
          'power_consumption': [
-            'Power consumption',
+            'Totaal stroomverbuik vandaag',
             'kWh',
             'mdi-flash',
             '/heatSources/energyMonitoring/consumption'
