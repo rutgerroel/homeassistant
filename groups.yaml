@@ -40,7 +40,6 @@
       - group.werkplaats
       - group.hal
       - group.bijkamer
-      - group.warmtepomp_kantoor
 
   boven:
     name: Eerste verdieping
@@ -50,6 +49,12 @@
       - group.keuken
       - group.slaapkamer
       - group.hal
+      
+  warmtepomp:
+    name: Warmtepompen
+    view: yes
+    entities:
+      - group.warmtepomp_beneden
       - group.warmtepomp_boven
 
   kantoor:
@@ -116,19 +121,24 @@
     name: Warmtepomp boven
     entities:
       - climate.warmtepomp_boven_thermostat
-      - sensor.warmtepomp_boven_room_temperature
-      - sensor.warmtepomp_boven_heating_room_setpoint
-      - sensor.warmtepomp_boven_outside_temperature
-      - sensor.warmtepomp_boven_modulation
-      - sensor.warmtepomp_boven_pump_modulation
-      - sensor.warmtepomp_boven_supply_temperature
+      - sensor.warmtepomp_boven_kamertemperatuur
+      - sensor.warmtepomp_boven_huidige_temperatuurinstelling
+      - sensor.warmtepomp_boven_buitentemperatuur
+      - sensor.warmtepomp_boven_modulatie
+      - sensor.warmtepomp_boven_pompmodulatie
+      - sensor.warmtepomp_boven_aanvoertemperatuur
+      - sensor.warmtepomp_boven_stroomverbruik
+      - sensor.warmtepomp_boven_totaal_stroomverbuik_vandaag
  
-  warmtepomp_kantoor:
-    name: Warmtepomp kantoor
-#    entities:
-#      - sensor.warmtepomp_loft_room_temperature
-#      - sensor.warmtepomp_loft_heating_room_setpoint
-#      - sensor.warmtepomp_loft_outside_temperature
-#      - sensor.warmtepomp_loft_modulation
-#      - sensor.warmtepomp_loft_pump_modulation
-#      - sensor.warmtepomp_loft_supply_temperature
+  warmtepomp_beneden:
+    name: Warmtepomp beneden
+    entities:
+      - climate.warmtepomp_beneden_thermostat
+      - sensor.warmtepomp_beneden_kamertemperatuur
+      - sensor.warmtepomp_beneden_huidige_temperatuurinstelling
+      - sensor.warmtepomp_beneden_buitentemperatuur
+      - sensor.warmtepomp_beneden_modulatie
+      - sensor.warmtepomp_beneden_pompmodulatie
+      - sensor.warmtepomp_beneden_aanvoertemperatuur
+      - sensor.warmtepomp_beneden_stroomverbruik
+      - sensor.warmtepomp_beneden_totaal_stroomverbuik_vandaag
