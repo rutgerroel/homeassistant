@@ -45,7 +45,17 @@
     light.hue_white_hal_beneden:
       friendly_name: Lamp beneden
     light.hue_white_hal_boven:
-      friendly_name: Lamp boven
+      friendly_name: Lamp buitendeur
+    light.hal_boven:
+      friendly_name: Spots boven
+    light.deense_lamp:
+      friendly_name: Lamp bank
+    light.tafellamp:
+      friendly_name: Lamp keuken
+    light.hue_white_lamp_1_2:
+      friendly_name: Lamp schijnwerper
+    light.hue_white_lamp_1
+      friendly_name: Lamp slaapkamer
 
 # DIMMERS #
     input_number.kantoor_left_dimmer:
@@ -112,8 +122,10 @@
       friendly_name: Aanvoertemperatuur
     sensor.warmtepomp_boven_stroomverbruik:
       friendly_name: Huidig stroomverbruik
+      icon: mdi:flash
     sensor.warmtepomp_boven_totaal_stroomverbuik_vandaag:
       friendly_name: Stroomverbruik vandaag
+      icon: mdi:flash
     climate.warmtepomp_beneden_thermostat:
       friendly_name: Thermostaat
     sensor.warmtepomp_beneden_kamertemperatuur:
@@ -130,5 +142,7 @@
       friendly_name: Aanvoertemperatuur
     sensor.warmtepomp_beneden_stroomverbruik:
       friendly_name: Huidig stroomverbruik
+      icon: mdi:flash
     sensor.warmtepomp_beneden_totaal_stroomverbuik_vandaag:
       friendly_name: Stroomverbruik vandaag
+      icon: mdi:flash
