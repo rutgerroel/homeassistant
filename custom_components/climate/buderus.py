@@ -4,7 +4,7 @@ Platform to control a Buderus KM200 unit.
 import logging
 
 from homeassistant.components.climate import (
-    ClimateDevice, SUPPORT_TARGET_TEMPERATURE)
+    ClimateDevice, SUPPORT_TARGET_TEMPERATURE, STATE_HEAT, STATE_IDLE)
 from homeassistant.const import (
     TEMP_CELSIUS, ATTR_TEMPERATURE)
 from custom_components.buderus import (
@@ -81,8 +81,8 @@ class BuderusThermostat(ClimateDevice):
                 self._target_temperature = self._bridge._get_value(data)
         
         if self._target_temperature < self._current_temperature:
-            self._current_operation = STATE_OFF
+            self._current_operation = STATE_IDLE
             self._operation_list = STATE_HEAT
         else:
             self._current_operation = STATE_HEAT
-            self._operation_list = STATE_OFF
+            self._operation_list = STATE_IDLE
