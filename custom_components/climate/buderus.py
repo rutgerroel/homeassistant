@@ -58,6 +58,11 @@ class BuderusThermostat(ClimateDevice):
     def target_temperature(self):
         """Return the temperature we try to reach."""
         return self._target_temperature
+    
+    @property
+    def current_operation(self):
+        """Return current operation ie. heat, cool, idle."""
+        return self._current_operation
 
     def set_temperature(self, **kwargs):
         """Set new target temperature."""
@@ -66,6 +71,11 @@ class BuderusThermostat(ClimateDevice):
             return
         self._bridge._submit_data('/heatingCircuits/hc1/temperatureRoomSetpoint', temperature)
         self._target_temperature = temperature
+        
+        if self._target_temperature < self._current_temperature:
+            self._current_operation = STATE_IDLE
+        else:
+            self._current_operation = STATE_HEAT
 
     def update(self):
         """Get the latest data."""
@@ -82,7 +92,5 @@ class BuderusThermostat(ClimateDevice):
         
         if self._target_temperature < self._current_temperature:
             self._current_operation = STATE_IDLE
-            self._operation_list = STATE_HEAT
         else:
             self._current_operation = STATE_HEAT
-            self._operation_list = STATE_IDLE
